@@ -3,24 +3,38 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
+		416358952417C69200D4B5A3 /* HoroscopeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 416358942417C69200D4B5A3 /* HoroscopeViewModel.swift */; };
+		416358972417CFB500D4B5A3 /* DataService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 416358962417CFB500D4B5A3 /* DataService.swift */; };
 		41A71172241272A5005CE66E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41A71171241272A5005CE66E /* AppDelegate.swift */; };
 		41A71174241272A5005CE66E /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41A71173241272A5005CE66E /* SceneDelegate.swift */; };
 		41A7117C241272A5005CE66E /* rx_newsapp.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 41A7117A241272A5005CE66E /* rx_newsapp.xcdatamodeld */; };
 		41A7117E241272A7005CE66E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 41A7117D241272A7005CE66E /* Assets.xcassets */; };
 		41A71181241272A7005CE66E /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 41A7117F241272A7005CE66E /* LaunchScreen.storyboard */; };
-		41A7118B241280F0005CE66E /* NewsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41A7118A241280F0005CE66E /* NewsTableViewController.swift */; };
-		41A7118D24128A1D005CE66E /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41A7118C24128A1D005CE66E /* Extensions.swift */; };
-		41A7119024129A6A005CE66E /* Article.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41A7118F24129A6A005CE66E /* Article.swift */; };
-		41A7119224129FB4005CE66E /* NewsViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41A7119124129FB4005CE66E /* NewsViewCell.swift */; };
+		41E4D49B24163CF60027E7E9 /* HoroscopeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41E4D49A24163CF60027E7E9 /* HoroscopeViewController.swift */; };
+		41E4D4A224164CBA0027E7E9 /* SignsPopupView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41E4D4A124164CBA0027E7E9 /* SignsPopupView.swift */; };
+		41E4D4A524164CFD0027E7E9 /* Colors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41E4D4A424164CFD0027E7E9 /* Colors.swift */; };
+		41E4D4A724164FDC0027E7E9 /* ZodiacSign.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41E4D4A624164FDC0027E7E9 /* ZodiacSign.swift */; };
+		41E4D4A9241650420027E7E9 /* ZodiacSigns.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41E4D4A8241650420027E7E9 /* ZodiacSigns.swift */; };
+		41E4D4AC241656900027E7E9 /* ZodiacViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41E4D4AB241656900027E7E9 /* ZodiacViewCell.swift */; };
+		41E4D4B4241680320027E7E9 /* HoroscopeVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41E4D4B3241680320027E7E9 /* HoroscopeVC.swift */; };
+		41E4D4B62416805B0027E7E9 /* Common.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41E4D4B52416805B0027E7E9 /* Common.swift */; };
+		41E4D4BC241688200027E7E9 /* Horoscope.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41E4D4BB241688200027E7E9 /* Horoscope.swift */; };
+		41E4D4BF24168E5B0027E7E9 /* ZodiacDashboardDetailsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41E4D4BE24168E5B0027E7E9 /* ZodiacDashboardDetailsView.swift */; };
+		41EC44FD2418CBE400CFED53 /* Periods.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41EC44FC2418CBE400CFED53 /* Periods.swift */; };
+		41EC45012418CFDE00CFED53 /* SegmentedControl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41EC45002418CFDE00CFED53 /* SegmentedControl.swift */; };
+		41EC45042418E05400CFED53 /* HoroscopeStatsChartView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41EC45032418E05400CFED53 /* HoroscopeStatsChartView.swift */; };
+		41EC45062418F19300CFED53 /* HoroscopeStatsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41EC45052418F19300CFED53 /* HoroscopeStatsView.swift */; };
 		8BB48A57D096E9A6B3271475 /* libPods-rx_newsapp.a in Frameworks */ = {isa = PBXBuildFile; fileRef = C8BD27DDB241D386C3A8CFEB /* libPods-rx_newsapp.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		0A0AEFB039E891318B60B6B0 /* Pods-rx_newsapp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-rx_newsapp.debug.xcconfig"; path = "Target Support Files/Pods-rx_newsapp/Pods-rx_newsapp.debug.xcconfig"; sourceTree = "<group>"; };
+		416358942417C69200D4B5A3 /* HoroscopeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HoroscopeViewModel.swift; sourceTree = "<group>"; };
+		416358962417CFB500D4B5A3 /* DataService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataService.swift; sourceTree = "<group>"; };
 		41A7116E241272A5005CE66E /* rx_newsapp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = rx_newsapp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		41A71171241272A5005CE66E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		41A71173241272A5005CE66E /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -28,10 +42,20 @@
 		41A7117D241272A7005CE66E /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		41A71180241272A7005CE66E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		41A71182241272A7005CE66E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		41A7118A241280F0005CE66E /* NewsTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsTableViewController.swift; sourceTree = "<group>"; };
-		41A7118C24128A1D005CE66E /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
-		41A7118F24129A6A005CE66E /* Article.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Article.swift; sourceTree = "<group>"; };
-		41A7119124129FB4005CE66E /* NewsViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsViewCell.swift; sourceTree = "<group>"; };
+		41E4D49A24163CF60027E7E9 /* HoroscopeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HoroscopeViewController.swift; sourceTree = "<group>"; };
+		41E4D4A124164CBA0027E7E9 /* SignsPopupView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignsPopupView.swift; sourceTree = "<group>"; };
+		41E4D4A424164CFD0027E7E9 /* Colors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Colors.swift; sourceTree = "<group>"; };
+		41E4D4A624164FDC0027E7E9 /* ZodiacSign.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ZodiacSign.swift; sourceTree = "<group>"; };
+		41E4D4A8241650420027E7E9 /* ZodiacSigns.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ZodiacSigns.swift; sourceTree = "<group>"; };
+		41E4D4AB241656900027E7E9 /* ZodiacViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ZodiacViewCell.swift; sourceTree = "<group>"; };
+		41E4D4B3241680320027E7E9 /* HoroscopeVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HoroscopeVC.swift; sourceTree = "<group>"; };
+		41E4D4B52416805B0027E7E9 /* Common.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Common.swift; sourceTree = "<group>"; };
+		41E4D4BB241688200027E7E9 /* Horoscope.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Horoscope.swift; sourceTree = "<group>"; };
+		41E4D4BE24168E5B0027E7E9 /* ZodiacDashboardDetailsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ZodiacDashboardDetailsView.swift; sourceTree = "<group>"; };
+		41EC44FC2418CBE400CFED53 /* Periods.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Periods.swift; sourceTree = "<group>"; };
+		41EC45002418CFDE00CFED53 /* SegmentedControl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SegmentedControl.swift; sourceTree = "<group>"; };
+		41EC45032418E05400CFED53 /* HoroscopeStatsChartView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HoroscopeStatsChartView.swift; sourceTree = "<group>"; };
+		41EC45052418F19300CFED53 /* HoroscopeStatsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HoroscopeStatsView.swift; sourceTree = "<group>"; };
 		BAD70BB0E61186A09B65F4FB /* Pods-rx_newsapp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-rx_newsapp.release.xcconfig"; path = "Target Support Files/Pods-rx_newsapp/Pods-rx_newsapp.release.xcconfig"; sourceTree = "<group>"; };
 		C8BD27DDB241D386C3A8CFEB /* libPods-rx_newsapp.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-rx_newsapp.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -48,6 +72,30 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		416358922417C67300D4B5A3 /* ViewModels */ = {
+			isa = PBXGroup;
+			children = (
+				416358932417C67A00D4B5A3 /* HoroscopeViewModel */,
+			);
+			path = ViewModels;
+			sourceTree = "<group>";
+		};
+		416358932417C67A00D4B5A3 /* HoroscopeViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				416358942417C69200D4B5A3 /* HoroscopeViewModel.swift */,
+			);
+			path = HoroscopeViewModel;
+			sourceTree = "<group>";
+		};
+		416358982417E6BC00D4B5A3 /* Common */ = {
+			isa = PBXGroup;
+			children = (
+				41EC45002418CFDE00CFED53 /* SegmentedControl.swift */,
+			);
+			path = Common;
+			sourceTree = "<group>";
+		};
 		41A71165241272A5005CE66E = {
 			isa = PBXGroup;
 			children = (
@@ -69,6 +117,10 @@
 		41A71170241272A5005CE66E /* rx_newsapp */ = {
 			isa = PBXGroup;
 			children = (
+				416358922417C67300D4B5A3 /* ViewModels */,
+				41E4D4B12416800C0027E7E9 /* Utils */,
+				41E4D4A324164CF00027E7E9 /* Constants */,
+				41E4D49F24164C7D0027E7E9 /* Views */,
 				41A7118E24129A5C005CE66E /* Models */,
 				41A71188241280B2005CE66E /* Controllers */,
 				41A71171241272A5005CE66E /* AppDelegate.swift */,
@@ -77,8 +129,6 @@
 				41A7117F241272A7005CE66E /* LaunchScreen.storyboard */,
 				41A71182241272A7005CE66E /* Info.plist */,
 				41A7117A241272A5005CE66E /* rx_newsapp.xcdatamodeld */,
-				41A7118C24128A1D005CE66E /* Extensions.swift */,
-				41A7119124129FB4005CE66E /* NewsViewCell.swift */,
 			);
 			path = rx_newsapp;
 			sourceTree = "<group>";
@@ -86,25 +136,107 @@
 		41A71188241280B2005CE66E /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
-				41A71189241280BB005CE66E /* NewsTableViewController */,
+				41E4D49924163CCA0027E7E9 /* HoroscopeVC */,
 			);
 			path = Controllers;
-			sourceTree = "<group>";
-		};
-		41A71189241280BB005CE66E /* NewsTableViewController */ = {
-			isa = PBXGroup;
-			children = (
-				41A7118A241280F0005CE66E /* NewsTableViewController.swift */,
-			);
-			path = NewsTableViewController;
 			sourceTree = "<group>";
 		};
 		41A7118E24129A5C005CE66E /* Models */ = {
 			isa = PBXGroup;
 			children = (
-				41A7118F24129A6A005CE66E /* Article.swift */,
+				41E4D4A624164FDC0027E7E9 /* ZodiacSign.swift */,
+				41E4D4BB241688200027E7E9 /* Horoscope.swift */,
+				41EC44FC2418CBE400CFED53 /* Periods.swift */,
 			);
 			path = Models;
+			sourceTree = "<group>";
+		};
+		41E4D49924163CCA0027E7E9 /* HoroscopeVC */ = {
+			isa = PBXGroup;
+			children = (
+				41E4D49A24163CF60027E7E9 /* HoroscopeViewController.swift */,
+			);
+			path = HoroscopeVC;
+			sourceTree = "<group>";
+		};
+		41E4D49F24164C7D0027E7E9 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				41EC45022418E03100CFED53 /* HoroscopeStats */,
+				416358982417E6BC00D4B5A3 /* Common */,
+				41E4D4BD24168E350027E7E9 /* ZodiacDashboardDetails */,
+				41E4D4AA2416566F0027E7E9 /* ZodiacCell */,
+				41E4D4A024164C8C0027E7E9 /* SignsPopup */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		41E4D4A024164C8C0027E7E9 /* SignsPopup */ = {
+			isa = PBXGroup;
+			children = (
+				41E4D4A124164CBA0027E7E9 /* SignsPopupView.swift */,
+			);
+			path = SignsPopup;
+			sourceTree = "<group>";
+		};
+		41E4D4A324164CF00027E7E9 /* Constants */ = {
+			isa = PBXGroup;
+			children = (
+				41E4D4A424164CFD0027E7E9 /* Colors.swift */,
+				41E4D4A8241650420027E7E9 /* ZodiacSigns.swift */,
+			);
+			path = Constants;
+			sourceTree = "<group>";
+		};
+		41E4D4AA2416566F0027E7E9 /* ZodiacCell */ = {
+			isa = PBXGroup;
+			children = (
+				41E4D4AB241656900027E7E9 /* ZodiacViewCell.swift */,
+			);
+			path = ZodiacCell;
+			sourceTree = "<group>";
+		};
+		41E4D4B12416800C0027E7E9 /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+				41E4D4B7241682CA0027E7E9 /* Helpers */,
+				41E4D4B2241680150027E7E9 /* Extensions */,
+			);
+			path = Utils;
+			sourceTree = "<group>";
+		};
+		41E4D4B2241680150027E7E9 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				41E4D4B3241680320027E7E9 /* HoroscopeVC.swift */,
+				41E4D4B52416805B0027E7E9 /* Common.swift */,
+				416358962417CFB500D4B5A3 /* DataService.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		41E4D4B7241682CA0027E7E9 /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Helpers;
+			sourceTree = "<group>";
+		};
+		41E4D4BD24168E350027E7E9 /* ZodiacDashboardDetails */ = {
+			isa = PBXGroup;
+			children = (
+				41E4D4BE24168E5B0027E7E9 /* ZodiacDashboardDetailsView.swift */,
+			);
+			path = ZodiacDashboardDetails;
+			sourceTree = "<group>";
+		};
+		41EC45022418E03100CFED53 /* HoroscopeStats */ = {
+			isa = PBXGroup;
+			children = (
+				41EC45032418E05400CFED53 /* HoroscopeStatsChartView.swift */,
+				41EC45052418F19300CFED53 /* HoroscopeStatsView.swift */,
+			);
+			path = HoroscopeStats;
 			sourceTree = "<group>";
 		};
 		45D16FCC707B70517F02E192 /* Pods */ = {
@@ -135,6 +267,7 @@
 				41A7116A241272A5005CE66E /* Sources */,
 				41A7116B241272A5005CE66E /* Frameworks */,
 				41A7116C241272A5005CE66E /* Resources */,
+				47A308924A573D74F87428AE /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -191,6 +324,23 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
+		47A308924A573D74F87428AE /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-rx_newsapp/Pods-rx_newsapp-resources-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Copy Pods Resources";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-rx_newsapp/Pods-rx_newsapp-resources-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-rx_newsapp/Pods-rx_newsapp-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
 		909F22BEB94427673DB6D0EC /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -220,13 +370,25 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				41A7118D24128A1D005CE66E /* Extensions.swift in Sources */,
+				416358952417C69200D4B5A3 /* HoroscopeViewModel.swift in Sources */,
+				41E4D4A224164CBA0027E7E9 /* SignsPopupView.swift in Sources */,
+				41E4D4A524164CFD0027E7E9 /* Colors.swift in Sources */,
+				41E4D4BF24168E5B0027E7E9 /* ZodiacDashboardDetailsView.swift in Sources */,
+				41E4D4B62416805B0027E7E9 /* Common.swift in Sources */,
+				41E4D4A724164FDC0027E7E9 /* ZodiacSign.swift in Sources */,
 				41A71172241272A5005CE66E /* AppDelegate.swift in Sources */,
-				41A7119024129A6A005CE66E /* Article.swift in Sources */,
+				416358972417CFB500D4B5A3 /* DataService.swift in Sources */,
+				41E4D4A9241650420027E7E9 /* ZodiacSigns.swift in Sources */,
+				41E4D4B4241680320027E7E9 /* HoroscopeVC.swift in Sources */,
+				41E4D4AC241656900027E7E9 /* ZodiacViewCell.swift in Sources */,
+				41E4D4BC241688200027E7E9 /* Horoscope.swift in Sources */,
+				41EC45012418CFDE00CFED53 /* SegmentedControl.swift in Sources */,
 				41A7117C241272A5005CE66E /* rx_newsapp.xcdatamodeld in Sources */,
-				41A7119224129FB4005CE66E /* NewsViewCell.swift in Sources */,
-				41A7118B241280F0005CE66E /* NewsTableViewController.swift in Sources */,
+				41EC45062418F19300CFED53 /* HoroscopeStatsView.swift in Sources */,
+				41E4D49B24163CF60027E7E9 /* HoroscopeViewController.swift in Sources */,
+				41EC44FD2418CBE400CFED53 /* Periods.swift in Sources */,
 				41A71174241272A5005CE66E /* SceneDelegate.swift in Sources */,
+				41EC45042418E05400CFED53 /* HoroscopeStatsChartView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

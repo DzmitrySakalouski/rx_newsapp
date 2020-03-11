@@ -3,10 +3,16 @@ import UIKit
 import RxSwift
 import RxCocoa
 
+struct Student {
+    let score: BehaviorRelay<String>
+}
+
 let reuseIdentifier = "NewsViewCell"
 
 class NewsTableViewController: UITableViewController {
     private var articles = [Article]()
+    
+    let disposedBag = DisposeBag()
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
@@ -18,8 +24,10 @@ class NewsTableViewController: UITableViewController {
         
         configureNavBar()
         configureUI()
-        
-        populateNews()
+        test()
+//        populateNews()
+//        let url = URL(string: "https://jsonplaceholder.typicode.com/posts")!
+//        URLRequest.test(url: url)
     }
     
     private func configureUI() {
@@ -29,6 +37,26 @@ class NewsTableViewController: UITableViewController {
     private func configureNavBar() {
         navigationItem.title = "Good News"
         navigationController?.navigationBar.prefersLargeTitles = true
+    }
+    
+    func test() {
+        print("test")
+        let john = Student(score: BehaviorRelay<String>(value: "john init"))
+        let mary = Student(score: BehaviorRelay<String>(value: "mary init"))
+        
+        let student = PublishSubject<Student>()
+        
+        student
+            .asObservable()
+            .flatMapLatest{ $0.score.asObservable() }
+            .subscribe(onNext: { print($0)}).disposed(by:disposedBag)
+        
+        student.onNext(john)
+        john.score.accept("john 1")
+        john.score.accept("john 2")
+        student.onNext(mary)
+        mary.score.accept("mary 1")
+        john.score.accept("mary 2")
     }
     
     private func populateNews() {
@@ -42,7 +70,7 @@ class NewsTableViewController: UITableViewController {
                     self.tableView.reloadData()
                 }
             }
-        })
+            }).disposed(by: disposedBag)
     }
     
     // MARK: - Table view data source

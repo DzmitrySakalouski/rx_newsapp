@@ -19,17 +19,17 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         // This delegate does not imply the connecting scene or session are new (see `application:configurationForConnectingSceneSession` instead).
         if let windwScene = scene as? UIWindowScene {
             let window = UIWindow(windowScene: windwScene)
-            let vc = NewsTableViewController()
+            let vc = HoroscopeViewController()
             let navigation = UINavigationController(rootViewController: vc)
             window.rootViewController = navigation
             self.window = window
             window.makeKeyAndVisible()
         }
-        
-        let statusBarFrame = window?.windowScene?.statusBarManager?.statusBarFrame ?? CGRect.zero
-        let statusBarView = UIView(frame: statusBarFrame)
-        statusBarView.backgroundColor = .darkGray
-        UIApplication.shared.windows.first?.addSubview(statusBarView)
+                
+//        let statusBarFrame = window?.windowScene?.statusBarManager?.statusBarFrame ?? CGRect.zero
+//        let statusBarView = UIView(frame: statusBarFrame)
+//        statusBarView.backgroundColor = .darkGray
+//        UIApplication.shared.windows.first?.addSubview(statusBarView)
 
         guard let _ = (scene as? UIWindowScene) else { return }
     }
