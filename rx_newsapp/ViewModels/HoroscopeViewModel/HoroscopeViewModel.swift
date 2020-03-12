@@ -8,6 +8,7 @@ struct HoroscopeViewModel {
     var selectedSignSubject = BehaviorSubject<ZodiacSign>(value: ZodiacSigns.aries.instance)
     var selectedPeriodIdSubject = BehaviorRelay<Int>(value: 1)
     var horoscopeData = BehaviorRelay<Horoscope>(value: Horoscope.empty)
+    let showLoading = BehaviorRelay<Bool>(value: true)
     
     var horoscopeSelectedPeriodData = BehaviorRelay<HoroscopeDateRangeData>(value: HoroscopeDateRangeData.empty)
     
@@ -26,13 +27,15 @@ struct HoroscopeViewModel {
         let url = URL(string: "https://horoplus.pro/api/horoscope/?sign=\(selectedSign.name)&locale=ru&date=2020-03-1")!
         let resource = Resource<Horoscope>(url: url, method: "GET")
         
+        let selectedPeriodId: Int = selectedPeriodIdSubject.value
+        
         URLRequest.load(resource: resource)
             .observeOn(MainScheduler.instance)
             .subscribe { response in
                 guard let data = response.event.element else { return }
                 self.horoscopeData.accept(data)
-                let periodData = data.today ?? HoroscopeDateRangeData.empty
-                self.horoscopeSelectedPeriodData.accept(periodData)
+                self.getHoroscopePeriodData(by: selectedPeriodId)
+                self.showLoading.accept(false)
            }.disposed(by: disposeBag)
 
     }

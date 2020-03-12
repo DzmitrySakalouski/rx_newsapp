@@ -19,6 +19,19 @@ class HoroscopeViewController: UIViewController {
         return button
     }()
     
+    private var shareButton: UIButton = {
+        let button = UIButton()
+        button.setTitle("Share", for: .normal)
+        button.layer.cornerRadius = 5
+        button.titleLabel?.font = UIFont.systemFont(ofSize: 14)
+        button.anchor(height: 45)
+        button.setTitleColor(Colors.COLOR_DARK_BLUE, for: .normal)
+        button.backgroundColor = Colors.COLOR_WHITE
+        button.imageView?.contentMode = .scaleAspectFit
+        button.imageEdgeInsets = UIEdgeInsets(top: 0, left: -20, bottom: 0, right: 0)
+        return button
+    }()
+    
     private lazy var popupView: UIView = {
         let view = UIView()
         view.translatesAutoresizingMaskIntoConstraints = false
@@ -53,6 +66,12 @@ class HoroscopeViewController: UIViewController {
         return btn
     }()
     
+    private var horoscopeDetailsStack: HoroscopeDetailsStack = {
+        let hd = HoroscopeDetailsStack()
+        hd.backgroundColor = .red
+        return hd
+    }()
+    
     private let periodSelectionControl: SegmentedControl = {
         let sg = SegmentedControl()
         sg.setButtonTitles(buttonTitles: [Periods.yesterday.rawValue, Periods.today.rawValue, Periods.tomorrow.rawValue, Periods.thisWeek.rawValue, Periods.year.rawValue])
@@ -63,10 +82,22 @@ class HoroscopeViewController: UIViewController {
         let stats = HoroscopeStatsView()
         return stats
     }()
+    
+    let horoscopeDataScrollView: UIScrollView = {
+        let sc = UIScrollView()
+        sc.backgroundColor = Colors.COLOR_DARK_BLUE
+        return sc
+    }()
+    
+    let activityIndicator: UIActivityIndicatorView = {
+        let ai = UIActivityIndicatorView(style: .large)
+        ai.isHidden = true
+        return ai
+    }()
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+                
         horoscopeVM = HoroscopeViewModel.shared()
         horoscopeVM.getHoroscopeData()
         
@@ -82,17 +113,48 @@ class HoroscopeViewController: UIViewController {
         signCollectionView.delegate = self
         signCollectionView.dataSource = self
 
-        view.addSubview(periodSelectionControl)
-
-        periodSelectionControl.anchor(top: dropdownLabel.bottomAnchor, left: view.leftAnchor, right: view.rightAnchor, paddingTop: 30, paddingLeft: 7, paddingRight: 7)
-
         let zodiacDashBoardDetailsView = ZodiacDashboardDetailsView()
-        view.addSubview(zodiacDashBoardDetailsView)
-        zodiacDashBoardDetailsView.anchor(top: periodSelectionControl.bottomAnchor, left: view.leftAnchor, right: view.rightAnchor, paddingTop: 30, paddingLeft: 30)
-        
-        view.addSubview(horoscopeStats)
-        horoscopeStats.anchor(top: zodiacDashBoardDetailsView.bottomAnchor, left: view.leftAnchor, right: view.rightAnchor, paddingTop: 20, paddingLeft: 15, paddingRight: 15, height: 150)
         configureSubscribtions()
+        
+        let activityIndicator = UIActivityIndicatorView(style: .large)
+        view.addSubview(activityIndicator)
+        activityIndicator.translatesAutoresizingMaskIntoConstraints = false
+        activityIndicator.centerXAnchor.constraint(equalToSystemSpacingAfter: view.centerXAnchor, multiplier: 0).isActive = true
+        activityIndicator.centerYAnchor.constraint(equalToSystemSpacingBelow: view.centerYAnchor, multiplier: 0).isActive = true
+
+        view.addSubview(horoscopeDataScrollView) // -----
+        horoscopeDataScrollView.translatesAutoresizingMaskIntoConstraints = false
+        horoscopeDataScrollView.showsVerticalScrollIndicator = false
+        
+        NSLayoutConstraint.activate([
+            horoscopeDataScrollView.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 10),
+            horoscopeDataScrollView.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -10),
+            horoscopeDataScrollView.topAnchor.constraint(equalTo: dropdownLabel.bottomAnchor, constant: 30), //(equalTo: dropdownLabel.bottomAnchor, ),
+            horoscopeDataScrollView.bottomAnchor.constraint(equalTo: view.bottomAnchor)
+        ])
+        
+        NSLayoutConstraint.activate([
+            horoscopeStats.heightAnchor.constraint(equalToConstant: 155)
+        ])
+        
+        let stackView = UIStackView()
+        stackView.axis = .vertical
+        stackView.translatesAutoresizingMaskIntoConstraints = false
+        stackView.addArrangedSubview(periodSelectionControl)
+        stackView.spacing = 30
+        stackView.addArrangedSubview(zodiacDashBoardDetailsView)
+        stackView.addArrangedSubview(horoscopeStats)
+        stackView.addArrangedSubview(horoscopeDetailsStack)
+        stackView.addArrangedSubview(shareButton)
+        horoscopeDataScrollView.addSubview(stackView)
+        NSLayoutConstraint.activate([
+            stackView.leadingAnchor.constraint(equalTo: horoscopeDataScrollView.leadingAnchor),
+            stackView.trailingAnchor.constraint(equalTo: horoscopeDataScrollView.trailingAnchor),
+            stackView.topAnchor.constraint(equalTo: horoscopeDataScrollView.topAnchor),
+            stackView.bottomAnchor.constraint(equalTo: horoscopeDataScrollView.bottomAnchor, constant: -30),
+            stackView.widthAnchor.constraint(equalTo: horoscopeDataScrollView.widthAnchor)
+        ])
+
     }
     
     private func onShow() {
@@ -146,9 +208,10 @@ class HoroscopeViewController: UIViewController {
         let selectedSign = self.horoscopeVM.selectedSignSubject.asDriver(onErrorJustReturn: zodiacSignsArray[0])
         selectedSign.map{ "\($0.displayName)"}.drive(self.dropdownLabel.rx.text).disposed(by: disposeBag)
         
-//        self.horoscopeVM.selectedPeriodIdSubject.subscribe(onNext: {
-//            print($0)
-//        }).disposed(by: disposeBag)
+        self.horoscopeVM.showLoading.subscribe( onNext: { [weak self] showLoading in
+            self?.activityIndicator.isHidden = !showLoading
+            self?.horoscopeDataScrollView.isHidden = showLoading
+        }).disposed(by: disposeBag)
     }
 }
 

@@ -5,6 +5,8 @@ class SegmentedControl: UIView {
     private var buttonTitles: [String]!
     private var buttons: [UIButton]!
     
+    
+    
     let vm = HoroscopeViewModel.shared()
     var selectedIndex: Int!
     var textColor: UIColor = Colors.COLOR_SECONDARY_TEXT
@@ -67,6 +69,7 @@ class SegmentedControl: UIView {
             btn.backgroundColor = itemBackgroundColor
             if btn == sender {
                 vm.getHoroscopePeriodData(by: btnId)
+                vm.selectedPeriodIdSubject.accept(btnId)
                 btn.setTitleColor(selectorTextColor, for: .normal)
                 btn.backgroundColor = selectedBackgroundColor
             }
