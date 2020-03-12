@@ -17,6 +17,8 @@
 		41D1021F241A38210060E546 /* HoroscopeDetails.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41D1021E241A38210060E546 /* HoroscopeDetails.swift */; };
 		41D10221241A3F300060E546 /* HoroscopeDetailsStack.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41D10220241A3F300060E546 /* HoroscopeDetailsStack.swift */; };
 		41D10223241A53B40060E546 /* HoroscopeDataTypes.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41D10222241A53B40060E546 /* HoroscopeDataTypes.swift */; };
+		41D10226241A765C0060E546 /* MainHomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41D10225241A765C0060E546 /* MainHomeViewController.swift */; };
+		41D10229241A77320060E546 /* CompatibilityViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41D10228241A77320060E546 /* CompatibilityViewController.swift */; };
 		41E4D49B24163CF60027E7E9 /* HoroscopeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41E4D49A24163CF60027E7E9 /* HoroscopeViewController.swift */; };
 		41E4D4A524164CFD0027E7E9 /* Colors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41E4D4A424164CFD0027E7E9 /* Colors.swift */; };
 		41E4D4A724164FDC0027E7E9 /* ZodiacSign.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41E4D4A624164FDC0027E7E9 /* ZodiacSign.swift */; };
@@ -47,6 +49,8 @@
 		41D1021E241A38210060E546 /* HoroscopeDetails.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HoroscopeDetails.swift; sourceTree = "<group>"; };
 		41D10220241A3F300060E546 /* HoroscopeDetailsStack.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HoroscopeDetailsStack.swift; sourceTree = "<group>"; };
 		41D10222241A53B40060E546 /* HoroscopeDataTypes.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HoroscopeDataTypes.swift; sourceTree = "<group>"; };
+		41D10225241A765C0060E546 /* MainHomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainHomeViewController.swift; sourceTree = "<group>"; };
+		41D10228241A77320060E546 /* CompatibilityViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CompatibilityViewController.swift; sourceTree = "<group>"; };
 		41E4D49A24163CF60027E7E9 /* HoroscopeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HoroscopeViewController.swift; sourceTree = "<group>"; };
 		41E4D4A424164CFD0027E7E9 /* Colors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Colors.swift; sourceTree = "<group>"; };
 		41E4D4A624164FDC0027E7E9 /* ZodiacSign.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ZodiacSign.swift; sourceTree = "<group>"; };
@@ -140,6 +144,8 @@
 		41A71188241280B2005CE66E /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				41D10227241A76AD0060E546 /* CompatibilityVC */,
+				41D10224241A76030060E546 /* MainHomeViewController */,
 				41E4D49924163CCA0027E7E9 /* HoroscopeVC */,
 			);
 			path = Controllers;
@@ -163,6 +169,22 @@
 				41D10220241A3F300060E546 /* HoroscopeDetailsStack.swift */,
 			);
 			path = HoroscopeDetailsView;
+			sourceTree = "<group>";
+		};
+		41D10224241A76030060E546 /* MainHomeViewController */ = {
+			isa = PBXGroup;
+			children = (
+				41D10225241A765C0060E546 /* MainHomeViewController.swift */,
+			);
+			path = MainHomeViewController;
+			sourceTree = "<group>";
+		};
+		41D10227241A76AD0060E546 /* CompatibilityVC */ = {
+			isa = PBXGroup;
+			children = (
+				41D10228241A77320060E546 /* CompatibilityViewController.swift */,
+			);
+			path = CompatibilityVC;
 			sourceTree = "<group>";
 		};
 		41E4D49924163CCA0027E7E9 /* HoroscopeVC */ = {
@@ -379,11 +401,13 @@
 				416358952417C69200D4B5A3 /* HoroscopeViewModel.swift in Sources */,
 				41E4D4A524164CFD0027E7E9 /* Colors.swift in Sources */,
 				41E4D4BF24168E5B0027E7E9 /* ZodiacDashboardDetailsView.swift in Sources */,
+				41D10229241A77320060E546 /* CompatibilityViewController.swift in Sources */,
 				41E4D4B62416805B0027E7E9 /* Common.swift in Sources */,
 				41E4D4A724164FDC0027E7E9 /* ZodiacSign.swift in Sources */,
 				41A71172241272A5005CE66E /* AppDelegate.swift in Sources */,
 				41D10223241A53B40060E546 /* HoroscopeDataTypes.swift in Sources */,
 				416358972417CFB500D4B5A3 /* DataService.swift in Sources */,
+				41D10226241A765C0060E546 /* MainHomeViewController.swift in Sources */,
 				41E4D4A9241650420027E7E9 /* ZodiacSigns.swift in Sources */,
 				41D10221241A3F300060E546 /* HoroscopeDetailsStack.swift in Sources */,
 				41E4D4B4241680320027E7E9 /* HoroscopeVC.swift in Sources */,

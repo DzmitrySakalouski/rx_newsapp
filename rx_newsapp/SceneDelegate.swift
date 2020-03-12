@@ -19,7 +19,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         // This delegate does not imply the connecting scene or session are new (see `application:configurationForConnectingSceneSession` instead).
         if let windwScene = scene as? UIWindowScene {
             let window = UIWindow(windowScene: windwScene)
-            let vc = HoroscopeViewController()
+            let vc = MainHomeViewController()
             let navigation = UINavigationController(rootViewController: vc)
             window.rootViewController = navigation
             self.window = window

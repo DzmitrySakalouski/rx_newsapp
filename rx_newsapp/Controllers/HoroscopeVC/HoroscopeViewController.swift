@@ -62,6 +62,7 @@ class HoroscopeViewController: UIViewController {
         let btn = UIButton()
         btn.setTitleColor(Colors.COLOR_WHITE, for: .normal)
         btn.setTitle("Close", for: .normal)
+        btn.titleLabel?.font = UIFont.systemFont(ofSize: 14)
         btn.addTarget(self, action: #selector(handleTogglePopupClose), for: .touchUpInside)
         return btn
     }()
@@ -74,6 +75,7 @@ class HoroscopeViewController: UIViewController {
     
     private let periodSelectionControl: SegmentedControl = {
         let sg = SegmentedControl()
+        sg.anchor(paddingTop: 10)
         sg.setButtonTitles(buttonTitles: [Periods.yesterday.rawValue, Periods.today.rawValue, Periods.tomorrow.rawValue, Periods.thisWeek.rawValue, Periods.year.rawValue])
         return sg
     }()
@@ -100,15 +102,18 @@ class HoroscopeViewController: UIViewController {
                 
         horoscopeVM = HoroscopeViewModel.shared()
         horoscopeVM.getHoroscopeData()
-        
-        navigationController?.navigationBar.isHidden = true
-        
+                
         view.backgroundColor = Colors.COLOR_DARK_BLUE
-        view.addSubview(dropdownLabel)
-        dropdownLabel.anchor(top: view.topAnchor, left: view.leftAnchor, right: view.rightAnchor, paddingTop: 30, paddingLeft: 20, paddingRight: 20)
-        view.addSubview(visualEffect)
-        visualEffect.anchor(top: view.topAnchor, left: view.leftAnchor, bottom: view.bottomAnchor, right: view.rightAnchor)
-        visualEffect.alpha = 0
+        dropdownLabel.translatesAutoresizingMaskIntoConstraints = false
+        dropdownLabel.textAlignment = .center
+        tabBarController?.navigationItem.titleView = dropdownLabel
+        
+        navigationController?.navigationBar.setValue(true, forKey: "hidesShadow")
+                
+        NSLayoutConstraint.activate([
+            dropdownLabel.leadingAnchor.constraint(equalTo: navigationController!.navigationBar.leadingAnchor, constant: 10),
+            dropdownLabel.trailingAnchor.constraint(equalTo: navigationController!.navigationBar.trailingAnchor, constant: -10),
+        ])
 
         signCollectionView.delegate = self
         signCollectionView.dataSource = self
@@ -129,7 +134,7 @@ class HoroscopeViewController: UIViewController {
         NSLayoutConstraint.activate([
             horoscopeDataScrollView.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 10),
             horoscopeDataScrollView.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -10),
-            horoscopeDataScrollView.topAnchor.constraint(equalTo: dropdownLabel.bottomAnchor, constant: 30), //(equalTo: dropdownLabel.bottomAnchor, ),
+            horoscopeDataScrollView.topAnchor.constraint(equalTo: view.topAnchor), //(equalTo: dropdownLabel.bottomAnchor, ),
             horoscopeDataScrollView.bottomAnchor.constraint(equalTo: view.bottomAnchor)
         ])
         
@@ -146,7 +151,9 @@ class HoroscopeViewController: UIViewController {
         stackView.addArrangedSubview(horoscopeStats)
         stackView.addArrangedSubview(horoscopeDetailsStack)
         stackView.addArrangedSubview(shareButton)
+        
         horoscopeDataScrollView.addSubview(stackView)
+        
         NSLayoutConstraint.activate([
             stackView.leadingAnchor.constraint(equalTo: horoscopeDataScrollView.leadingAnchor),
             stackView.trailingAnchor.constraint(equalTo: horoscopeDataScrollView.trailingAnchor),
@@ -158,8 +165,12 @@ class HoroscopeViewController: UIViewController {
     }
     
     private func onShow() {
+        view.addSubview(visualEffect)
+        visualEffect.anchor(top: view.topAnchor, left: view.leftAnchor, bottom: view.bottomAnchor, right: view.rightAnchor)
+        visualEffect.alpha = 0
+        
         view.addSubview(popupView)
-        popupView.anchor(top: dropdownLabel.bottomAnchor, bottom: view.bottomAnchor , paddingBottom: 20, width: view.frame.width - 20)
+        popupView.anchor(top: navigationController?.navigationBar.topAnchor, bottom: tabBarController?.tabBar.topAnchor, paddingTop: 10, paddingBottom: 10, width: view.frame.width - 20)
         popupView.centerXAnchor.constraint(equalToSystemSpacingAfter: view.centerXAnchor, multiplier: 0).isActive = true
         
         popupView.addSubview(closeButton)
@@ -184,6 +195,7 @@ class HoroscopeViewController: UIViewController {
             self.popupView.alpha = 0
             self.visualEffect.alpha = 0
         }){ (_) in
+            self.visualEffect.removeFromSuperview()
             self.popupView.removeFromSuperview()
         }
     }
