@@ -96,6 +96,12 @@ class HoroscopeViewController: UIViewController {
         ai.isHidden = true
         return ai
     }()
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        tabBarController?.navigationController?.navigationBar.isHidden = false
+        tabBarController?.navigationItem.titleView = dropdownLabel
+    }
 
     override func viewDidLoad() {
         super.viewDidLoad()

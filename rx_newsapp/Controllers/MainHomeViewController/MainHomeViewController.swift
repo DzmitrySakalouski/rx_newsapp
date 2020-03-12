@@ -28,13 +28,13 @@ class MainHomeViewController: UITabBarController, UITabBarControllerDelegate {
     }
     
     func constructNacController(tabName: String, rootViewController: UIViewController = UIViewController()) -> UINavigationController {
-        rootViewController.navigationController?.navigationBar.isHidden = true
-        
         let tabBarAppearance = tabBar.standardAppearance
         tabBarAppearance.shadowImage = nil
         tabBarAppearance.shadowColor = nil
         tabBarAppearance.backgroundColor = Colors.COLOR_DARK_BLUE
         tabBar.standardAppearance = tabBarAppearance
+        
+        tabBarController?.navigationController?.navigationBar.isHidden = true
         
         let navController = UINavigationController(rootViewController: rootViewController)
         

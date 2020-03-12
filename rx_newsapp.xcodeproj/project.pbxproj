@@ -9,6 +9,8 @@
 /* Begin PBXBuildFile section */
 		416358952417C69200D4B5A3 /* HoroscopeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 416358942417C69200D4B5A3 /* HoroscopeViewModel.swift */; };
 		416358972417CFB500D4B5A3 /* DataService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 416358962417CFB500D4B5A3 /* DataService.swift */; };
+		4179E3E5241AC78800C6FEA8 /* compatibility.json in Resources */ = {isa = PBXBuildFile; fileRef = 4179E3E4241AC78800C6FEA8 /* compatibility.json */; };
+		4179E3E7241AC96000C6FEA8 /* Compatibility.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4179E3E6241AC96000C6FEA8 /* Compatibility.swift */; };
 		41A71172241272A5005CE66E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41A71171241272A5005CE66E /* AppDelegate.swift */; };
 		41A71174241272A5005CE66E /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41A71173241272A5005CE66E /* SceneDelegate.swift */; };
 		41A7117C241272A5005CE66E /* rx_newsapp.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 41A7117A241272A5005CE66E /* rx_newsapp.xcdatamodeld */; };
@@ -19,6 +21,7 @@
 		41D10223241A53B40060E546 /* HoroscopeDataTypes.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41D10222241A53B40060E546 /* HoroscopeDataTypes.swift */; };
 		41D10226241A765C0060E546 /* MainHomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41D10225241A765C0060E546 /* MainHomeViewController.swift */; };
 		41D10229241A77320060E546 /* CompatibilityViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41D10228241A77320060E546 /* CompatibilityViewController.swift */; };
+		41D1022C241A92290060E546 /* CompatibilityViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41D1022B241A92290060E546 /* CompatibilityViewModel.swift */; };
 		41E4D49B24163CF60027E7E9 /* HoroscopeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41E4D49A24163CF60027E7E9 /* HoroscopeViewController.swift */; };
 		41E4D4A524164CFD0027E7E9 /* Colors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41E4D4A424164CFD0027E7E9 /* Colors.swift */; };
 		41E4D4A724164FDC0027E7E9 /* ZodiacSign.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41E4D4A624164FDC0027E7E9 /* ZodiacSign.swift */; };
@@ -39,6 +42,8 @@
 		0A0AEFB039E891318B60B6B0 /* Pods-rx_newsapp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-rx_newsapp.debug.xcconfig"; path = "Target Support Files/Pods-rx_newsapp/Pods-rx_newsapp.debug.xcconfig"; sourceTree = "<group>"; };
 		416358942417C69200D4B5A3 /* HoroscopeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HoroscopeViewModel.swift; sourceTree = "<group>"; };
 		416358962417CFB500D4B5A3 /* DataService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataService.swift; sourceTree = "<group>"; };
+		4179E3E4241AC78800C6FEA8 /* compatibility.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = compatibility.json; sourceTree = "<group>"; };
+		4179E3E6241AC96000C6FEA8 /* Compatibility.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Compatibility.swift; sourceTree = "<group>"; };
 		41A7116E241272A5005CE66E /* rx_newsapp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = rx_newsapp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		41A71171241272A5005CE66E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		41A71173241272A5005CE66E /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -51,6 +56,7 @@
 		41D10222241A53B40060E546 /* HoroscopeDataTypes.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HoroscopeDataTypes.swift; sourceTree = "<group>"; };
 		41D10225241A765C0060E546 /* MainHomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainHomeViewController.swift; sourceTree = "<group>"; };
 		41D10228241A77320060E546 /* CompatibilityViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CompatibilityViewController.swift; sourceTree = "<group>"; };
+		41D1022B241A92290060E546 /* CompatibilityViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CompatibilityViewModel.swift; sourceTree = "<group>"; };
 		41E4D49A24163CF60027E7E9 /* HoroscopeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HoroscopeViewController.swift; sourceTree = "<group>"; };
 		41E4D4A424164CFD0027E7E9 /* Colors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Colors.swift; sourceTree = "<group>"; };
 		41E4D4A624164FDC0027E7E9 /* ZodiacSign.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ZodiacSign.swift; sourceTree = "<group>"; };
@@ -83,6 +89,7 @@
 		416358922417C67300D4B5A3 /* ViewModels */ = {
 			isa = PBXGroup;
 			children = (
+				41D1022A241A920A0060E546 /* CompatibilityViewModel */,
 				416358932417C67A00D4B5A3 /* HoroscopeViewModel */,
 			);
 			path = ViewModels;
@@ -102,6 +109,14 @@
 				41EC45002418CFDE00CFED53 /* SegmentedControl.swift */,
 			);
 			path = Common;
+			sourceTree = "<group>";
+		};
+		4179E3E3241AC77000C6FEA8 /* Assets */ = {
+			isa = PBXGroup;
+			children = (
+				4179E3E4241AC78800C6FEA8 /* compatibility.json */,
+			);
+			path = Assets;
 			sourceTree = "<group>";
 		};
 		41A71165241272A5005CE66E = {
@@ -125,6 +140,7 @@
 		41A71170241272A5005CE66E /* rx_newsapp */ = {
 			isa = PBXGroup;
 			children = (
+				4179E3E3241AC77000C6FEA8 /* Assets */,
 				416358922417C67300D4B5A3 /* ViewModels */,
 				41E4D4B12416800C0027E7E9 /* Utils */,
 				41E4D4A324164CF00027E7E9 /* Constants */,
@@ -158,6 +174,7 @@
 				41E4D4BB241688200027E7E9 /* Horoscope.swift */,
 				41EC44FC2418CBE400CFED53 /* Periods.swift */,
 				41D10222241A53B40060E546 /* HoroscopeDataTypes.swift */,
+				4179E3E6241AC96000C6FEA8 /* Compatibility.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -185,6 +202,14 @@
 				41D10228241A77320060E546 /* CompatibilityViewController.swift */,
 			);
 			path = CompatibilityVC;
+			sourceTree = "<group>";
+		};
+		41D1022A241A920A0060E546 /* CompatibilityViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				41D1022B241A92290060E546 /* CompatibilityViewModel.swift */,
+			);
+			path = CompatibilityViewModel;
 			sourceTree = "<group>";
 		};
 		41E4D49924163CCA0027E7E9 /* HoroscopeVC */ = {
@@ -345,6 +370,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				41A71181241272A7005CE66E /* LaunchScreen.storyboard in Resources */,
+				4179E3E5241AC78800C6FEA8 /* compatibility.json in Resources */,
 				41A7117E241272A7005CE66E /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -407,10 +433,12 @@
 				41A71172241272A5005CE66E /* AppDelegate.swift in Sources */,
 				41D10223241A53B40060E546 /* HoroscopeDataTypes.swift in Sources */,
 				416358972417CFB500D4B5A3 /* DataService.swift in Sources */,
+				4179E3E7241AC96000C6FEA8 /* Compatibility.swift in Sources */,
 				41D10226241A765C0060E546 /* MainHomeViewController.swift in Sources */,
 				41E4D4A9241650420027E7E9 /* ZodiacSigns.swift in Sources */,
 				41D10221241A3F300060E546 /* HoroscopeDetailsStack.swift in Sources */,
 				41E4D4B4241680320027E7E9 /* HoroscopeVC.swift in Sources */,
+				41D1022C241A92290060E546 /* CompatibilityViewModel.swift in Sources */,
 				41E4D4AC241656900027E7E9 /* ZodiacViewCell.swift in Sources */,
 				41E4D4BC241688200027E7E9 /* Horoscope.swift in Sources */,
 				41EC45012418CFDE00CFED53 /* SegmentedControl.swift in Sources */,
