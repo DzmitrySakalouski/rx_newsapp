@@ -27,12 +27,13 @@ struct Details: Decodable {
     let locale: String
     let marriage: String
     let sexual: String
+    let success: String
     let wealth_and_family: String
     let children: String
 }
 
 extension Details {
-    static var empty = Details(locale: "", marriage: "", sexual: "", wealth_and_family: "", children: "")
+    static var empty = Details(locale: "", marriage: "", sexual: "", success: "", wealth_and_family: "", children: "")
 }
 
 extension Counters {

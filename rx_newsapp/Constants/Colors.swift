@@ -10,4 +10,5 @@ class Colors {
     static let COLOR_TURQUOISE = UIColor(red: 27/255, green: 215/255, blue: 202/255, alpha: 1)
     static let COLOR_SECONDARY_TEXT = UIColor(red: 175/255, green: 175/255, blue: 245/255, alpha: 1)
     static let COLOR_WHITE: UIColor = .white
+    static let COLOR_BACKGROUND_MEDIUM_BLUE = UIColor(red: 142/255, green: 142/255, blue: 240/255, alpha: 1)
 }

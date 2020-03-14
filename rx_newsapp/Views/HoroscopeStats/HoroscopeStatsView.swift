@@ -10,7 +10,21 @@ import UIKit
 import RxSwift
 
 class HoroscopeStatsView: UIView {
-    let horoscopeVM = HoroscopeViewModel.shared()
+    var viewModel: HoroscopeViewModel! {
+        didSet {
+            self.viewModel.horoscopeSelectedPeriodData.subscribe(onNext: {
+                self.configureHoroscopeStackStats(chartData: $0)
+            }).disposed(by: disposeBag)
+        }
+    }
+    
+    var viewModelCompatibility: CompatibilityViewModel! {
+        didSet {
+            self.viewModelCompatibility.selectedSignsCompatibilityData.subscribe(onNext: { [weak self] data in
+                self?.configureCompatibilityStackStats(chartData: data)
+            }).disposed(by: disposeBag)
+        }
+    }
 
     let disposeBag = DisposeBag()
     
@@ -19,33 +33,61 @@ class HoroscopeStatsView: UIView {
         return horoscopeChart
     }()
     
+    var redChart: HoroscopeStatsChartView = {
+        let redChart = HoroscopeStatsChartView()
+        redChart.chartPrimaryColor = Colors.COLOR_DARK_RED
+
+        return redChart
+    }()
+    
+    var yellowChart: HoroscopeStatsChartView = {
+        let yellowChart = HoroscopeStatsChartView()
+        yellowChart.chartPrimaryColor = Colors.COLOR_YELLOW
+
+        return yellowChart
+    }()
+    
+    var blueChart: HoroscopeStatsChartView = {
+        let blueChart = HoroscopeStatsChartView()
+        blueChart.chartPrimaryColor = Colors.COLOR_TURQUOISE
+
+        return blueChart
+    }()
+    
     override init(frame: CGRect) {
         super.init(frame: frame)
         backgroundColor = Colors.COLOR_BACKGROUND_DARK_BLUE
         layer.cornerRadius = 10
-        
-        self.horoscopeVM.horoscopeSelectedPeriodData.subscribe(onNext: {
-            self.configureStackStats(chartData: $0)
-        }).disposed(by: disposeBag)
     }
     
-    private func configureStackStats(chartData: HoroscopeDateRangeData) {
-        let loveChart = HoroscopeStatsChartView()
-        loveChart.chartName = "Love"
-        loveChart.chartValue = Double(chartData.love_rate)
-        loveChart.chartPrimaryColor = Colors.COLOR_DARK_RED
+    private func configureCompatibilityStackStats(chartData: SignForCompatibilityCompare) {
+        redChart.chartName = "Love"
+        redChart.chartValue = Double(chartData.counters.love)
+        
+        yellowChart.chartName = "Passion"
+        yellowChart.chartValue = Double(chartData.counters.passion)
+        
+        blueChart.chartName = "Trust"
+        blueChart.chartValue = Double(chartData.counters.trust)
+        
+        renderChart()
+    }
+    
+    private func configureHoroscopeStackStats(chartData: HoroscopeDateRangeData) {
+        redChart.chartName = "Love"
+        redChart.chartValue = Double(chartData.love_rate)
 
-        let healthChart = HoroscopeStatsChartView()
-        healthChart.chartName = "Health"
-        healthChart.chartValue = Double(chartData.health_rate)
-        healthChart.chartPrimaryColor = Colors.COLOR_YELLOW
+        yellowChart.chartName = "Health"
+        yellowChart.chartValue = Double(chartData.health_rate)
 
-        let careerChart = HoroscopeStatsChartView()
-        careerChart.chartName = "Career"
-        careerChart.chartValue = Double(chartData.career_rate)
-        careerChart.chartPrimaryColor = Colors.COLOR_TURQUOISE
+        blueChart.chartName = "Career"
+        blueChart.chartValue = Double(chartData.career_rate)
 
-        let stack = UIStackView(arrangedSubviews: [loveChart, healthChart, careerChart])
+        renderChart()
+    }
+    
+    private func renderChart() {
+        let stack = UIStackView(arrangedSubviews: [redChart, yellowChart, blueChart])
         stack.axis = .horizontal
         stack.distribution = .fillEqually
 

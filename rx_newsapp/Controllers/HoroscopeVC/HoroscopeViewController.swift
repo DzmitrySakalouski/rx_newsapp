@@ -82,6 +82,7 @@ class HoroscopeViewController: UIViewController {
     
     let horoscopeStats: HoroscopeStatsView = {
         let stats = HoroscopeStatsView()
+        stats.viewModel = HoroscopeViewModel.shared()
         return stats
     }()
     
