@@ -57,6 +57,17 @@ class CompatibilityViewController: UIViewController {
         return stats
     }()
     
+    lazy var clearButton: UIBarButtonItem = {
+        let clearButton = UIBarButtonItem(title: "Clear", style: .plain, target: self, action: #selector(handleClearData))
+        clearButton.tintColor = Colors.COLOR_WHITE
+        return clearButton
+    }()
+    
+    var stackView: UIStackView = {
+        let stackView = UIStackView()
+        return stackView
+    }()
+    
     // MARK: - lifecycle
     
     override func viewWillAppear(_ animated: Bool) {
@@ -117,9 +128,7 @@ class CompatibilityViewController: UIViewController {
         selectedSignsForComatibilityDriver.drive(checkCompatibilityButton.rx.signsForCompatibility).disposed(by: disposeBag)
         
         self.compatibilityVM.selectedSignsForComatibility.subscribe(onNext: { [weak self] selectedSigns in
-            if selectedSigns.count == 2 {
-                self?.checkCompatibilityButton.isEnabled = true
-            }
+                self?.checkCompatibilityButton.isEnabled = selectedSigns.count == 2
             }).disposed(by: disposeBag)
     }
     
@@ -129,18 +138,18 @@ class CompatibilityViewController: UIViewController {
         checkCompatibilityButton.removeFromSuperview()
         selectSignView.removeFromSuperview()
         
+        tabBarController?.navigationItem.rightBarButtonItem = clearButton
         
         compatibilityScrollView.addSubview(selectSignView)
         selectSignView.anchor(top: compatibilityScrollView.topAnchor, width: 230, height: 100)
         selectSignView.centerXAnchor.constraint(equalToSystemSpacingAfter: compatibilityScrollView.centerXAnchor, multiplier: 0).isActive = true
         
-        
         self.compatibilityVM.selectedSignsCompatibilityData.asDriver().drive(selectSignView.rx.percentCompatibility).disposed(by: disposeBag)
         
         compatibilityVM.getCompatibilitySignData()
-        
-        let stackView = UIStackView()
+    
         stackView.axis = .vertical
+        stackView.spacing = 20
         stackView.translatesAutoresizingMaskIntoConstraints = false
         stackView.addArrangedSubview(compatibilityStats)
         stackView.addArrangedSubview(compatibilityDetailsStack)
@@ -157,7 +166,17 @@ class CompatibilityViewController: UIViewController {
             stackView.widthAnchor.constraint(equalTo: compatibilityScrollView.widthAnchor)
         ])
         
-        
+    }
+    
+    @objc func handleClearData() {
+        print("CLEAR")
+        self.selectSignView.removeFromSuperview()
+        self.stackView.removeFromSuperview()
+        self.compatibilityScrollView.removeFromSuperview()
+        tabBarController?.navigationItem.rightBarButtonItem = nil
+        self.compatibilityVM.selectedSignsCompatibilityData.accept(SignForCompatibilityCompare.empty)
+        self.compatibilityVM.selectedSignsForComatibility.accept([ZodiacSign]())
+        self.configureView()
     }
     
 }
