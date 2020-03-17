@@ -10,6 +10,7 @@ class WhiteButton: UIButton {
         backgroundColor = Colors.COLOR_SECONDARY_TEXT
         layer.cornerRadius = 5
         titleLabel?.font = UIFont.systemFont(ofSize: 14)
+        backgroundColor = Colors.COLOR_WHITE // TODO refactor
     }
     
     func update(signs: [ZodiacSign]) {

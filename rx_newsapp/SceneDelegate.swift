@@ -7,7 +7,8 @@
 //
 
 import UIKit
-
+import FBSDKCoreKit
+import FBSDKLoginKit
 class SceneDelegate: UIResponder, UIWindowSceneDelegate {
 
     var window: UIWindow?
@@ -19,7 +20,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         // This delegate does not imply the connecting scene or session are new (see `application:configurationForConnectingSceneSession` instead).
         if let windwScene = scene as? UIWindowScene {
             let window = UIWindow(windowScene: windwScene)
-            let vc = MainHomeViewController()
+            let vc = AuthHomeViewController() // PaymentViewController() // AuthHomeViewController() // MainHomeViewController()
             let navigation = UINavigationController(rootViewController: vc)
             window.rootViewController = navigation
             self.window = window
@@ -32,6 +33,17 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
 //        UIApplication.shared.windows.first?.addSubview(statusBarView)
 
         guard let _ = (scene as? UIWindowScene) else { return }
+    }
+    
+    func scene(_ scene: UIScene, openURLContexts URLContexts: Set<UIOpenURLContext>) {
+        guard let url = URLContexts.first?.url else {
+            return
+        }
+        let _ = ApplicationDelegate.shared.application(
+            UIApplication.shared,
+            open: url,
+            sourceApplication: nil,
+            annotation: [UIApplication.OpenURLOptionsKey.annotation])
     }
 
     func sceneDidDisconnect(_ scene: UIScene) {

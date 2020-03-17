@@ -1,7 +1,7 @@
 import UIKit
 import Foundation
 
-struct Horoscope: Decodable {
+struct Horoscope: Decodable, Encodable {
     let today: HoroscopeDateRangeData?
     let yesterday: HoroscopeDateRangeData?
     let tomorrow: HoroscopeDateRangeData?
@@ -10,7 +10,7 @@ struct Horoscope: Decodable {
     let year: HoroscopeDateRangeData?
 }
 
-struct HoroscopeDateRangeData: Decodable {
+struct HoroscopeDateRangeData: Decodable, Encodable {
     let sign: String
     let locale: String
     let love_rate: Int

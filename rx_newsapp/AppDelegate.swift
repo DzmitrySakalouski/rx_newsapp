@@ -1,21 +1,17 @@
-//
-//  AppDelegate.swift
-//  rx_newsapp
-//
-//  Created by Dzmitry  Sakalouski  on 3/6/20.
-//  Copyright © 2020 Dzmitry  Sakalouski . All rights reserved.
-//
-
 import UIKit
 import CoreData
+import FBSDKCoreKit
+import FBSDKLoginKit
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
-
+    var window: UIWindow?
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
+        ApplicationDelegate.shared.application(application, didFinishLaunchingWithOptions: launchOptions)
+        
         UITabBar.appearance().barTintColor = Colors.COLOR_DARK_BLUE
         UINavigationBar.appearance().titleTextAttributes = [NSAttributedString.Key.foregroundColor : UIColor.white]
         UINavigationBar.appearance().backgroundColor = Colors.COLOR_DARK_BLUE
@@ -37,6 +33,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // Called when the user discards a scene session.
         // If any sessions were discarded while the application was not running, this will be called shortly after application:didFinishLaunchingWithOptions.
         // Use this method to release any resources that were specific to the discarded scenes, as they will not return.
+    }
+    
+    func application(_ app: UIApplication, open url: URL, options: [UIApplication.OpenURLOptionsKey : Any] = [:]) -> Bool {
+      return ApplicationDelegate.shared.application(app, open: url, options: options)
     }
 
     // MARK: - Core Data stack

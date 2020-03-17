@@ -25,7 +25,7 @@ struct HoroscopeViewModel {
     func getHoroscopeData() {
         guard let selectedSign = try? selectedSignSubject.value() else { return }
         let url = URL(string: "https://horoplus.pro/api/horoscope/?sign=\(selectedSign.name)&locale=ru&date=2020-03-1")!
-        let resource = Resource<Horoscope>(url: url, method: "GET")
+        let resource = Resource<Horoscope>(url: url, method: "GET", data: nil)
         
         let selectedPeriodId: Int = selectedPeriodIdSubject.value
         

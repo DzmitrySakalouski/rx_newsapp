@@ -1,3 +1,4 @@
 ${PODS_ROOT}/Target Support Files/Pods-rx_newsapp/Pods-rx_newsapp-resources.sh
+${PODS_ROOT}/FBSDKCoreKit/FacebookSDKStrings.bundle
 ${PODS_CONFIGURATION_BUILD_DIR}/Material/com.cosmicmind.material.icons.bundle
 ${PODS_CONFIGURATION_BUILD_DIR}/Material/com.cosmicmind.material.fonts.bundle

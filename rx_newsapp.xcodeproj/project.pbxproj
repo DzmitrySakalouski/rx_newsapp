@@ -7,6 +7,20 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		412CAE56241EB33B004EA27E /* AuthHomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 412CAE55241EB33B004EA27E /* AuthHomeViewController.swift */; };
+		412CAE58241EB456004EA27E /* OutlinedButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 412CAE57241EB456004EA27E /* OutlinedButton.swift */; };
+		41384DE2241F8F3000CB7C30 /* UserData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41384DE1241F8F3000CB7C30 /* UserData.swift */; };
+		41384DE5241F920000CB7C30 /* PaymentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41384DE4241F920000CB7C30 /* PaymentViewController.swift */; };
+		41384DEA241FB96800CB7C30 /* ManualSignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41384DE9241FB96800CB7C30 /* ManualSignUpViewController.swift */; };
+		41384DED241FC61C00CB7C30 /* TextInputView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41384DEC241FC61C00CB7C30 /* TextInputView.swift */; };
+		4153CAB82420CF450007CEB4 /* SignUpModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4153CAB72420CF450007CEB4 /* SignUpModel.swift */; };
+		4153CABB2420CFC10007CEB4 /* FieldViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4153CABA2420CFC10007CEB4 /* FieldViewModel.swift */; };
+		4153CABD2420D09D0007CEB4 /* EmailFieldViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4153CABC2420D09D0007CEB4 /* EmailFieldViewModel.swift */; };
+		4153CABF2420D1520007CEB4 /* DateFieldViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4153CABE2420D1520007CEB4 /* DateFieldViewModel.swift */; };
+		4153CAC12420D7320007CEB4 /* NameFiewldViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4153CAC02420D7320007CEB4 /* NameFiewldViewModel.swift */; };
+		4153CAC32420D83A0007CEB4 /* TimeFieldViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4153CAC22420D83A0007CEB4 /* TimeFieldViewModel.swift */; };
+		4153CAC52420D8A90007CEB4 /* PlaceFieldViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4153CAC42420D8A90007CEB4 /* PlaceFieldViewModel.swift */; };
+		4153CAC82420D9090007CEB4 /* SignUpViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4153CAC72420D9090007CEB4 /* SignUpViewModel.swift */; };
 		416358952417C69200D4B5A3 /* HoroscopeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 416358942417C69200D4B5A3 /* HoroscopeViewModel.swift */; };
 		416358972417CFB500D4B5A3 /* DataService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 416358962417CFB500D4B5A3 /* DataService.swift */; };
 		4179E3E5241AC78800C6FEA8 /* compatibility.json in Resources */ = {isa = PBXBuildFile; fileRef = 4179E3E4241AC78800C6FEA8 /* compatibility.json */; };
@@ -42,11 +56,26 @@
 		41EC45012418CFDE00CFED53 /* SegmentedControl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41EC45002418CFDE00CFED53 /* SegmentedControl.swift */; };
 		41EC45042418E05400CFED53 /* HoroscopeStatsChartView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41EC45032418E05400CFED53 /* HoroscopeStatsChartView.swift */; };
 		41EC45062418F19300CFED53 /* HoroscopeStatsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41EC45052418F19300CFED53 /* HoroscopeStatsView.swift */; };
-		8BB48A57D096E9A6B3271475 /* libPods-rx_newsapp.a in Frameworks */ = {isa = PBXBuildFile; fileRef = C8BD27DDB241D386C3A8CFEB /* libPods-rx_newsapp.a */; };
+		5C15FF58A13243ABB5AE363E /* libPods-rx_newsapp.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 0883EE1B4F8C219F4F0712BA /* libPods-rx_newsapp.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		0883EE1B4F8C219F4F0712BA /* libPods-rx_newsapp.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-rx_newsapp.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		0A0AEFB039E891318B60B6B0 /* Pods-rx_newsapp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-rx_newsapp.debug.xcconfig"; path = "Target Support Files/Pods-rx_newsapp/Pods-rx_newsapp.debug.xcconfig"; sourceTree = "<group>"; };
+		412CAE55241EB33B004EA27E /* AuthHomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthHomeViewController.swift; sourceTree = "<group>"; };
+		412CAE57241EB456004EA27E /* OutlinedButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OutlinedButton.swift; sourceTree = "<group>"; };
+		41384DE1241F8F3000CB7C30 /* UserData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserData.swift; sourceTree = "<group>"; };
+		41384DE4241F920000CB7C30 /* PaymentViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaymentViewController.swift; sourceTree = "<group>"; };
+		41384DE9241FB96800CB7C30 /* ManualSignUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ManualSignUpViewController.swift; sourceTree = "<group>"; };
+		41384DEC241FC61C00CB7C30 /* TextInputView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextInputView.swift; sourceTree = "<group>"; };
+		4153CAB72420CF450007CEB4 /* SignUpModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpModel.swift; sourceTree = "<group>"; };
+		4153CABA2420CFC10007CEB4 /* FieldViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FieldViewModel.swift; sourceTree = "<group>"; };
+		4153CABC2420D09D0007CEB4 /* EmailFieldViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmailFieldViewModel.swift; sourceTree = "<group>"; };
+		4153CABE2420D1520007CEB4 /* DateFieldViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateFieldViewModel.swift; sourceTree = "<group>"; };
+		4153CAC02420D7320007CEB4 /* NameFiewldViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NameFiewldViewModel.swift; sourceTree = "<group>"; };
+		4153CAC22420D83A0007CEB4 /* TimeFieldViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimeFieldViewModel.swift; sourceTree = "<group>"; };
+		4153CAC42420D8A90007CEB4 /* PlaceFieldViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlaceFieldViewModel.swift; sourceTree = "<group>"; };
+		4153CAC72420D9090007CEB4 /* SignUpViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewModel.swift; sourceTree = "<group>"; };
 		416358942417C69200D4B5A3 /* HoroscopeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HoroscopeViewModel.swift; sourceTree = "<group>"; };
 		416358962417CFB500D4B5A3 /* DataService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataService.swift; sourceTree = "<group>"; };
 		4179E3E4241AC78800C6FEA8 /* compatibility.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = compatibility.json; sourceTree = "<group>"; };
@@ -85,7 +114,6 @@
 		41EC45032418E05400CFED53 /* HoroscopeStatsChartView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HoroscopeStatsChartView.swift; sourceTree = "<group>"; };
 		41EC45052418F19300CFED53 /* HoroscopeStatsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HoroscopeStatsView.swift; sourceTree = "<group>"; };
 		BAD70BB0E61186A09B65F4FB /* Pods-rx_newsapp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-rx_newsapp.release.xcconfig"; path = "Target Support Files/Pods-rx_newsapp/Pods-rx_newsapp.release.xcconfig"; sourceTree = "<group>"; };
-		C8BD27DDB241D386C3A8CFEB /* libPods-rx_newsapp.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-rx_newsapp.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -93,16 +121,80 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				8BB48A57D096E9A6B3271475 /* libPods-rx_newsapp.a in Frameworks */,
+				5C15FF58A13243ABB5AE363E /* libPods-rx_newsapp.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		412CAE52241EB268004EA27E /* Authentication */ = {
+			isa = PBXGroup;
+			children = (
+				412CAE54241EB28F004EA27E /* ManualSignUpVC */,
+				412CAE53241EB275004EA27E /* AuthHomeVC */,
+			);
+			path = Authentication;
+			sourceTree = "<group>";
+		};
+		412CAE53241EB275004EA27E /* AuthHomeVC */ = {
+			isa = PBXGroup;
+			children = (
+				412CAE55241EB33B004EA27E /* AuthHomeViewController.swift */,
+			);
+			path = AuthHomeVC;
+			sourceTree = "<group>";
+		};
+		412CAE54241EB28F004EA27E /* ManualSignUpVC */ = {
+			isa = PBXGroup;
+			children = (
+				41384DE9241FB96800CB7C30 /* ManualSignUpViewController.swift */,
+			);
+			path = ManualSignUpVC;
+			sourceTree = "<group>";
+		};
+		41384DE3241F91DD00CB7C30 /* PaymentVC */ = {
+			isa = PBXGroup;
+			children = (
+				41384DE4241F920000CB7C30 /* PaymentViewController.swift */,
+			);
+			path = PaymentVC;
+			sourceTree = "<group>";
+		};
+		41384DEB241FC5FE00CB7C30 /* TextInput */ = {
+			isa = PBXGroup;
+			children = (
+				41384DEC241FC61C00CB7C30 /* TextInputView.swift */,
+			);
+			path = TextInput;
+			sourceTree = "<group>";
+		};
+		4153CAB92420CFA50007CEB4 /* SignUpViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				4153CAC62420D8D80007CEB4 /* SignUpVMHelpers */,
+				4153CAC72420D9090007CEB4 /* SignUpViewModel.swift */,
+			);
+			path = SignUpViewModel;
+			sourceTree = "<group>";
+		};
+		4153CAC62420D8D80007CEB4 /* SignUpVMHelpers */ = {
+			isa = PBXGroup;
+			children = (
+				4153CABA2420CFC10007CEB4 /* FieldViewModel.swift */,
+				4153CABC2420D09D0007CEB4 /* EmailFieldViewModel.swift */,
+				4153CABE2420D1520007CEB4 /* DateFieldViewModel.swift */,
+				4153CAC02420D7320007CEB4 /* NameFiewldViewModel.swift */,
+				4153CAC22420D83A0007CEB4 /* TimeFieldViewModel.swift */,
+				4153CAC42420D8A90007CEB4 /* PlaceFieldViewModel.swift */,
+			);
+			path = SignUpVMHelpers;
+			sourceTree = "<group>";
+		};
 		416358922417C67300D4B5A3 /* ViewModels */ = {
 			isa = PBXGroup;
 			children = (
+				4153CAB92420CFA50007CEB4 /* SignUpViewModel */,
 				41D1022A241A920A0060E546 /* CompatibilityViewModel */,
 				416358932417C67A00D4B5A3 /* HoroscopeViewModel */,
 			);
@@ -174,8 +266,10 @@
 		41A71188241280B2005CE66E /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				41384DE3241F91DD00CB7C30 /* PaymentVC */,
+				412CAE52241EB268004EA27E /* Authentication */,
 				41D10227241A76AD0060E546 /* CompatibilityVC */,
-				41D10224241A76030060E546 /* MainHomeViewController */,
+				41D10224241A76030060E546 /* MainHomeVC */,
 				41E4D49924163CCA0027E7E9 /* HoroscopeVC */,
 			);
 			path = Controllers;
@@ -189,6 +283,8 @@
 				41EC44FC2418CBE400CFED53 /* Periods.swift */,
 				41D10222241A53B40060E546 /* HoroscopeDataTypes.swift */,
 				4179E3E6241AC96000C6FEA8 /* Compatibility.swift */,
+				41384DE1241F8F3000CB7C30 /* UserData.swift */,
+				4153CAB72420CF450007CEB4 /* SignUpModel.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -207,6 +303,7 @@
 			isa = PBXGroup;
 			children = (
 				41BC97F1241BAE5500524D39 /* WhiteButton.swift */,
+				412CAE57241EB456004EA27E /* OutlinedButton.swift */,
 			);
 			path = Buttons;
 			sourceTree = "<group>";
@@ -220,12 +317,12 @@
 			path = HoroscopeDetailsView;
 			sourceTree = "<group>";
 		};
-		41D10224241A76030060E546 /* MainHomeViewController */ = {
+		41D10224241A76030060E546 /* MainHomeVC */ = {
 			isa = PBXGroup;
 			children = (
 				41D10225241A765C0060E546 /* MainHomeViewController.swift */,
 			);
-			path = MainHomeViewController;
+			path = MainHomeVC;
 			sourceTree = "<group>";
 		};
 		41D10227241A76AD0060E546 /* CompatibilityVC */ = {
@@ -255,6 +352,7 @@
 		41E4D49F24164C7D0027E7E9 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				41384DEB241FC5FE00CB7C30 /* TextInput */,
 				41EA5BFF241CE91200347B0A /* CompatibilityDetailsView */,
 				41BC97F0241BAE3300524D39 /* Buttons */,
 				41BC97E8241B9F4100524D39 /* SelectSignForCompare */,
@@ -349,7 +447,7 @@
 		FF4F0C131C8B2EC8CF6FA91F /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				C8BD27DDB241D386C3A8CFEB /* libPods-rx_newsapp.a */,
+				0883EE1B4F8C219F4F0712BA /* libPods-rx_newsapp.a */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -365,7 +463,7 @@
 				41A7116A241272A5005CE66E /* Sources */,
 				41A7116B241272A5005CE66E /* Frameworks */,
 				41A7116C241272A5005CE66E /* Resources */,
-				47A308924A573D74F87428AE /* [CP] Copy Pods Resources */,
+				BD695D3F4C99804A5BD36A51 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -423,23 +521,6 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		47A308924A573D74F87428AE /* [CP] Copy Pods Resources */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-rx_newsapp/Pods-rx_newsapp-resources-${CONFIGURATION}-input-files.xcfilelist",
-			);
-			name = "[CP] Copy Pods Resources";
-			outputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-rx_newsapp/Pods-rx_newsapp-resources-${CONFIGURATION}-output-files.xcfilelist",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-rx_newsapp/Pods-rx_newsapp-resources.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
 		909F22BEB94427673DB6D0EC /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -462,6 +543,23 @@
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
+		BD695D3F4C99804A5BD36A51 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-rx_newsapp/Pods-rx_newsapp-resources-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Copy Pods Resources";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-rx_newsapp/Pods-rx_newsapp-resources-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-rx_newsapp/Pods-rx_newsapp-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
@@ -471,34 +569,48 @@
 			files = (
 				41EA5C01241CE93300347B0A /* CompatibilityDetailsStack.swift in Sources */,
 				416358952417C69200D4B5A3 /* HoroscopeViewModel.swift in Sources */,
+				412CAE56241EB33B004EA27E /* AuthHomeViewController.swift in Sources */,
 				41E4D4A524164CFD0027E7E9 /* Colors.swift in Sources */,
 				41E4D4BF24168E5B0027E7E9 /* ZodiacDashboardDetailsView.swift in Sources */,
 				41D10229241A77320060E546 /* CompatibilityViewController.swift in Sources */,
 				41E4D4B62416805B0027E7E9 /* Common.swift in Sources */,
+				4153CABF2420D1520007CEB4 /* DateFieldViewModel.swift in Sources */,
+				41384DE5241F920000CB7C30 /* PaymentViewController.swift in Sources */,
+				4153CABD2420D09D0007CEB4 /* EmailFieldViewModel.swift in Sources */,
 				41E4D4A724164FDC0027E7E9 /* ZodiacSign.swift in Sources */,
 				41A71172241272A5005CE66E /* AppDelegate.swift in Sources */,
 				41BC97F4241BB13400524D39 /* CompatibilityVC.swift in Sources */,
 				41D10223241A53B40060E546 /* HoroscopeDataTypes.swift in Sources */,
+				41384DED241FC61C00CB7C30 /* TextInputView.swift in Sources */,
+				4153CAC12420D7320007CEB4 /* NameFiewldViewModel.swift in Sources */,
 				41BC97EC241BA7DA00524D39 /* SelectSignButton.swift in Sources */,
 				41BC97F2241BAE5500524D39 /* WhiteButton.swift in Sources */,
 				416358972417CFB500D4B5A3 /* DataService.swift in Sources */,
 				4179E3E7241AC96000C6FEA8 /* Compatibility.swift in Sources */,
 				41D10226241A765C0060E546 /* MainHomeViewController.swift in Sources */,
+				4153CAB82420CF450007CEB4 /* SignUpModel.swift in Sources */,
 				41E4D4A9241650420027E7E9 /* ZodiacSigns.swift in Sources */,
 				41D10221241A3F300060E546 /* HoroscopeDetailsStack.swift in Sources */,
 				41E4D4B4241680320027E7E9 /* HoroscopeVC.swift in Sources */,
+				4153CAC52420D8A90007CEB4 /* PlaceFieldViewModel.swift in Sources */,
 				41D1022C241A92290060E546 /* CompatibilityViewModel.swift in Sources */,
 				41E4D4AC241656900027E7E9 /* ZodiacViewCell.swift in Sources */,
 				41E4D4BC241688200027E7E9 /* Horoscope.swift in Sources */,
 				41EA5C03241CE95B00347B0A /* CompatibilityDetails.swift in Sources */,
+				41384DE2241F8F3000CB7C30 /* UserData.swift in Sources */,
+				4153CAC32420D83A0007CEB4 /* TimeFieldViewModel.swift in Sources */,
+				41384DEA241FB96800CB7C30 /* ManualSignUpViewController.swift in Sources */,
 				41BC97EE241BA95500524D39 /* PercentLabel.swift in Sources */,
 				41EC45012418CFDE00CFED53 /* SegmentedControl.swift in Sources */,
 				41D1021F241A38210060E546 /* HoroscopeDetails.swift in Sources */,
+				4153CAC82420D9090007CEB4 /* SignUpViewModel.swift in Sources */,
+				4153CABB2420CFC10007CEB4 /* FieldViewModel.swift in Sources */,
 				41A7117C241272A5005CE66E /* rx_newsapp.xcdatamodeld in Sources */,
 				41EC45062418F19300CFED53 /* HoroscopeStatsView.swift in Sources */,
 				41E4D49B24163CF60027E7E9 /* HoroscopeViewController.swift in Sources */,
 				41EC44FD2418CBE400CFED53 /* Periods.swift in Sources */,
 				41A71174241272A5005CE66E /* SceneDelegate.swift in Sources */,
+				412CAE58241EB456004EA27E /* OutlinedButton.swift in Sources */,
 				41EC45042418E05400CFED53 /* HoroscopeStatsChartView.swift in Sources */,
 				41BC97EA241B9F7100524D39 /* SelectSignForCompareView.swift in Sources */,
 			);
