@@ -3,6 +3,8 @@ import FacebookCore
 import UIKit
 
 class AuthHomeViewController: UIViewController {
+    let userViewModel = UserViewModel.shared()
+    
     var logoImageView: UIImageView = {
         let iv = UIImageView()
         iv.image = UIImage(imageLiteralResourceName: "logo")
@@ -96,6 +98,8 @@ class AuthHomeViewController: UIViewController {
                             timeOfBirth: "",
                             placeOfBirth: ""
                         )
+                        
+                        self.userViewModel.currentUserRelay.accept(currentUser)
                         
                         let paymentVC = PaymentViewController()
                         self.navigationController?.pushViewController(paymentVC, animated: true)

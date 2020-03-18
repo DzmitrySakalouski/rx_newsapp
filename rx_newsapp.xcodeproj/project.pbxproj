@@ -21,6 +21,9 @@
 		4153CAC32420D83A0007CEB4 /* TimeFieldViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4153CAC22420D83A0007CEB4 /* TimeFieldViewModel.swift */; };
 		4153CAC52420D8A90007CEB4 /* PlaceFieldViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4153CAC42420D8A90007CEB4 /* PlaceFieldViewModel.swift */; };
 		4153CAC82420D9090007CEB4 /* SignUpViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4153CAC72420D9090007CEB4 /* SignUpViewModel.swift */; };
+		4153CACB24215F9E0007CEB4 /* UserViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4153CACA24215F9E0007CEB4 /* UserViewModel.swift */; };
+		4153CACE242162080007CEB4 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4153CACD242162080007CEB4 /* ProfileViewController.swift */; };
+		4153CAD02421622E0007CEB4 /* SignHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4153CACF2421622E0007CEB4 /* SignHelper.swift */; };
 		416358952417C69200D4B5A3 /* HoroscopeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 416358942417C69200D4B5A3 /* HoroscopeViewModel.swift */; };
 		416358972417CFB500D4B5A3 /* DataService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 416358962417CFB500D4B5A3 /* DataService.swift */; };
 		4179E3E5241AC78800C6FEA8 /* compatibility.json in Resources */ = {isa = PBXBuildFile; fileRef = 4179E3E4241AC78800C6FEA8 /* compatibility.json */; };
@@ -76,6 +79,9 @@
 		4153CAC22420D83A0007CEB4 /* TimeFieldViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimeFieldViewModel.swift; sourceTree = "<group>"; };
 		4153CAC42420D8A90007CEB4 /* PlaceFieldViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlaceFieldViewModel.swift; sourceTree = "<group>"; };
 		4153CAC72420D9090007CEB4 /* SignUpViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewModel.swift; sourceTree = "<group>"; };
+		4153CACA24215F9E0007CEB4 /* UserViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserViewModel.swift; sourceTree = "<group>"; };
+		4153CACD242162080007CEB4 /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
+		4153CACF2421622E0007CEB4 /* SignHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignHelper.swift; sourceTree = "<group>"; };
 		416358942417C69200D4B5A3 /* HoroscopeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HoroscopeViewModel.swift; sourceTree = "<group>"; };
 		416358962417CFB500D4B5A3 /* DataService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataService.swift; sourceTree = "<group>"; };
 		4179E3E4241AC78800C6FEA8 /* compatibility.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = compatibility.json; sourceTree = "<group>"; };
@@ -191,9 +197,26 @@
 			path = SignUpVMHelpers;
 			sourceTree = "<group>";
 		};
+		4153CAC924215F840007CEB4 /* UserViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				4153CACA24215F9E0007CEB4 /* UserViewModel.swift */,
+			);
+			path = UserViewModel;
+			sourceTree = "<group>";
+		};
+		4153CACC242160D50007CEB4 /* ProfileVC */ = {
+			isa = PBXGroup;
+			children = (
+				4153CACD242162080007CEB4 /* ProfileViewController.swift */,
+			);
+			path = ProfileVC;
+			sourceTree = "<group>";
+		};
 		416358922417C67300D4B5A3 /* ViewModels */ = {
 			isa = PBXGroup;
 			children = (
+				4153CAC924215F840007CEB4 /* UserViewModel */,
 				4153CAB92420CFA50007CEB4 /* SignUpViewModel */,
 				41D1022A241A920A0060E546 /* CompatibilityViewModel */,
 				416358932417C67A00D4B5A3 /* HoroscopeViewModel */,
@@ -266,6 +289,7 @@
 		41A71188241280B2005CE66E /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				4153CACC242160D50007CEB4 /* ProfileVC */,
 				41384DE3241F91DD00CB7C30 /* PaymentVC */,
 				412CAE52241EB268004EA27E /* Authentication */,
 				41D10227241A76AD0060E546 /* CompatibilityVC */,
@@ -405,6 +429,7 @@
 		41E4D4B7241682CA0027E7E9 /* Helpers */ = {
 			isa = PBXGroup;
 			children = (
+				4153CACF2421622E0007CEB4 /* SignHelper.swift */,
 			);
 			path = Helpers;
 			sourceTree = "<group>";
@@ -569,10 +594,12 @@
 			files = (
 				41EA5C01241CE93300347B0A /* CompatibilityDetailsStack.swift in Sources */,
 				416358952417C69200D4B5A3 /* HoroscopeViewModel.swift in Sources */,
+				4153CAD02421622E0007CEB4 /* SignHelper.swift in Sources */,
 				412CAE56241EB33B004EA27E /* AuthHomeViewController.swift in Sources */,
 				41E4D4A524164CFD0027E7E9 /* Colors.swift in Sources */,
 				41E4D4BF24168E5B0027E7E9 /* ZodiacDashboardDetailsView.swift in Sources */,
 				41D10229241A77320060E546 /* CompatibilityViewController.swift in Sources */,
+				4153CACE242162080007CEB4 /* ProfileViewController.swift in Sources */,
 				41E4D4B62416805B0027E7E9 /* Common.swift in Sources */,
 				4153CABF2420D1520007CEB4 /* DateFieldViewModel.swift in Sources */,
 				41384DE5241F920000CB7C30 /* PaymentViewController.swift in Sources */,
@@ -586,6 +613,7 @@
 				41BC97EC241BA7DA00524D39 /* SelectSignButton.swift in Sources */,
 				41BC97F2241BAE5500524D39 /* WhiteButton.swift in Sources */,
 				416358972417CFB500D4B5A3 /* DataService.swift in Sources */,
+				4153CACB24215F9E0007CEB4 /* UserViewModel.swift in Sources */,
 				4179E3E7241AC96000C6FEA8 /* Compatibility.swift in Sources */,
 				41D10226241A765C0060E546 /* MainHomeViewController.swift in Sources */,
 				4153CAB82420CF450007CEB4 /* SignUpModel.swift in Sources */,

@@ -2,10 +2,12 @@ import RxCocoa
 import RxSwift
 import Foundation
 
-struct HoroscopeViewModel {
+class HoroscopeViewModel {
     private static var instance: HoroscopeViewModel?
+    
+    let userViewModel = UserViewModel.shared()
     let isPopupOpenSubject = BehaviorRelay<Bool>(value: false)
-    var selectedSignSubject = BehaviorSubject<ZodiacSign>(value: ZodiacSigns.aries.instance)
+    var selectedSignSubject = BehaviorRelay<ZodiacSign>(value: ZodiacSigns.aries.instance)
     var selectedPeriodIdSubject = BehaviorRelay<Int>(value: 1)
     var horoscopeData = BehaviorRelay<Horoscope>(value: Horoscope.empty)
     let showLoading = BehaviorRelay<Bool>(value: true)
@@ -13,6 +15,17 @@ struct HoroscopeViewModel {
     var horoscopeSelectedPeriodData = BehaviorRelay<HoroscopeDateRangeData>(value: HoroscopeDateRangeData.empty)
     
     let disposeBag = DisposeBag()
+    
+    private init() {
+        userViewModel.currentUserRelay.subscribe(onNext: { [weak self] userData in
+            if let currentUserData = userData {
+                let userZodiacSign = SignHelper.getSignFromDateRange(dateString: currentUserData.birthday)
+                if userZodiacSign != nil {
+                    self?.selectedSignSubject.accept(userZodiacSign!)
+                }
+            }
+        }).disposed(by: disposeBag)
+    }
     
     static func shared() -> HoroscopeViewModel {
         if instance == nil {
@@ -23,8 +36,11 @@ struct HoroscopeViewModel {
     }
     
     func getHoroscopeData() {
-        guard let selectedSign = try? selectedSignSubject.value() else { return }
-        let url = URL(string: "https://horoplus.pro/api/horoscope/?sign=\(selectedSign.name)&locale=ru&date=2020-03-1")!
+        let selectedSign = selectedSignSubject.value
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat = "yyyy-MM-dd"
+        let date = dateFormatter.string(from: Date())
+        let url = URL(string: "https://horoplus.pro/api/horoscope/?sign=\(selectedSign.name)&locale=ru&date=\(date)")!
         let resource = Resource<Horoscope>(url: url, method: "GET", data: nil)
         
         let selectedPeriodId: Int = selectedPeriodIdSubject.value

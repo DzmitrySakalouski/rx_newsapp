@@ -12,6 +12,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // Override point for customization after application launch.
         ApplicationDelegate.shared.application(application, didFinishLaunchingWithOptions: launchOptions)
         
+        _ = UserViewModel.shared()
+        
         UITabBar.appearance().barTintColor = Colors.COLOR_DARK_BLUE
         UINavigationBar.appearance().titleTextAttributes = [NSAttributedString.Key.foregroundColor : UIColor.white]
         UINavigationBar.appearance().backgroundColor = Colors.COLOR_DARK_BLUE

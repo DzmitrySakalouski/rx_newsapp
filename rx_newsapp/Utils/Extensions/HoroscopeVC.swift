@@ -23,7 +23,7 @@ extension HoroscopeViewController: UICollectionViewDataSource, UICollectionViewD
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         let zodiacTitleName = self.horoscopeVM.selectedSignSubject.asDriver(onErrorJustReturn: zodiacSignsArray[0])
         zodiacTitleName.map{ "\($0.displayName)" }.drive(dropdownLabel.rx.text).disposed(by: disposeBag)
-        self.horoscopeVM.selectedSignSubject.onNext(zodiacSignsArray[indexPath.row])
+        self.horoscopeVM.selectedSignSubject.accept(zodiacSignsArray[indexPath.row])
         self.horoscopeVM.isPopupOpenSubject.accept(false)
         self.horoscopeVM.getHoroscopeData()
     }

@@ -3,6 +3,8 @@ import RxCocoa
 import Foundation
 
 class SignUpViewModel {
+    let userViewModel = UserViewModel.shared()
+    
     let nameFieldViewModel = NameFieldViewModel()
     let dateFieldViewModel = DateFieldViewModel()
     let timeFieldViewModel = TimeFieldViewModel()
@@ -29,9 +31,6 @@ class SignUpViewModel {
             placeOfBirth: placeFieldViewModel.value.value
         )
         
-        print(" Value: -> \(nameFieldViewModel.value.value)")
-        
-        
         let resource = Resource<UserData>(url: URL(string: "https://horoplus.pro/api/user/")!, method: "POST", data: userPayload)
         
         self.isLoading.accept(true)
@@ -43,6 +42,7 @@ class SignUpViewModel {
                 let result = try? JSONDecoder().decode(SignUpResponce.self, from: data)
                 if let isSuccess = result?.success {
                     self.isSuccess.accept(isSuccess)
+                    self.userViewModel.currentUserRelay.accept(userPayload)
                 }
             }.disposed(by: disposeBag)
     }
