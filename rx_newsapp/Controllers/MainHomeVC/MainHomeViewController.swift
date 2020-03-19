@@ -20,8 +20,9 @@ class MainHomeViewController: UITabBarController, UITabBarControllerDelegate {
     private func configureViewControllers() {
         let horoscopeVC = constructNacController(tabName: "Horoscope",rootViewController: HoroscopeViewController())
         let compatibilityVC = constructNacController(tabName: "Campatibility", rootViewController: CompatibilityViewController())
-        viewControllers = [horoscopeVC, compatibilityVC]
-        tabBar.tintColor = Colors.COLOR_DARK_BLUE
+        let profileVC = constructNacController(tabName: "Profile", rootViewController: ProfileViewController())
+        viewControllers = [horoscopeVC, compatibilityVC, profileVC]
+        tabBar.tintColor = Colors.COLOR_WHITE
         tabBar.backgroundColor = Colors.COLOR_DARK_BLUE
         tabBar.shadowImage = UIImage()
         tabBarController?.navigationController?.navigationBar.backgroundColor = Colors.COLOR_DARK_BLUE

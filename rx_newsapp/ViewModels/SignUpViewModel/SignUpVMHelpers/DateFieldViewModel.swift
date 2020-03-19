@@ -19,7 +19,9 @@ struct DateFieldViewModel: FieldViewModel {
         
         let currentDateString = dateFormatter.string(from: todayDate)
         
-        if !(dateOfBirth < currentDateString || dateOfBirth == currentDateString) {
+        let cDate = dateFormatter.date(from: dateOfBirth)
+        
+        if !(cDate! < todayDate || dateOfBirth == currentDateString) {
             errorValue.accept(errorMessage)
             print(errorMessage)
             print(dateOfBirth < currentDateString)

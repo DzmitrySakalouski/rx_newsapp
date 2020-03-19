@@ -24,6 +24,9 @@
 		4153CACB24215F9E0007CEB4 /* UserViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4153CACA24215F9E0007CEB4 /* UserViewModel.swift */; };
 		4153CACE242162080007CEB4 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4153CACD242162080007CEB4 /* ProfileViewController.swift */; };
 		4153CAD02421622E0007CEB4 /* SignHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4153CACF2421622E0007CEB4 /* SignHelper.swift */; };
+		415D35C324238C3C0082626F /* EditProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 415D35C224238C3C0082626F /* EditProfileViewController.swift */; };
+		415D35C6242397D40082626F /* NotificationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 415D35C5242397D40082626F /* NotificationViewController.swift */; };
+		415D35C9242398A10082626F /* NotificationListBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 415D35C8242398A10082626F /* NotificationListBar.swift */; };
 		416358952417C69200D4B5A3 /* HoroscopeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 416358942417C69200D4B5A3 /* HoroscopeViewModel.swift */; };
 		416358972417CFB500D4B5A3 /* DataService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 416358962417CFB500D4B5A3 /* DataService.swift */; };
 		4179E3E5241AC78800C6FEA8 /* compatibility.json in Resources */ = {isa = PBXBuildFile; fileRef = 4179E3E4241AC78800C6FEA8 /* compatibility.json */; };
@@ -44,6 +47,7 @@
 		41D10226241A765C0060E546 /* MainHomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41D10225241A765C0060E546 /* MainHomeViewController.swift */; };
 		41D10229241A77320060E546 /* CompatibilityViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41D10228241A77320060E546 /* CompatibilityViewController.swift */; };
 		41D1022C241A92290060E546 /* CompatibilityViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41D1022B241A92290060E546 /* CompatibilityViewModel.swift */; };
+		41DD0FAB24223CAD008A2565 /* ListBarTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41DD0FAA24223CAD008A2565 /* ListBarTableViewCell.swift */; };
 		41E4D49B24163CF60027E7E9 /* HoroscopeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41E4D49A24163CF60027E7E9 /* HoroscopeViewController.swift */; };
 		41E4D4A524164CFD0027E7E9 /* Colors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41E4D4A424164CFD0027E7E9 /* Colors.swift */; };
 		41E4D4A724164FDC0027E7E9 /* ZodiacSign.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41E4D4A624164FDC0027E7E9 /* ZodiacSign.swift */; };
@@ -82,6 +86,9 @@
 		4153CACA24215F9E0007CEB4 /* UserViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserViewModel.swift; sourceTree = "<group>"; };
 		4153CACD242162080007CEB4 /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
 		4153CACF2421622E0007CEB4 /* SignHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignHelper.swift; sourceTree = "<group>"; };
+		415D35C224238C3C0082626F /* EditProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditProfileViewController.swift; sourceTree = "<group>"; };
+		415D35C5242397D40082626F /* NotificationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationViewController.swift; sourceTree = "<group>"; };
+		415D35C8242398A10082626F /* NotificationListBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationListBar.swift; sourceTree = "<group>"; };
 		416358942417C69200D4B5A3 /* HoroscopeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HoroscopeViewModel.swift; sourceTree = "<group>"; };
 		416358962417CFB500D4B5A3 /* DataService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataService.swift; sourceTree = "<group>"; };
 		4179E3E4241AC78800C6FEA8 /* compatibility.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = compatibility.json; sourceTree = "<group>"; };
@@ -104,6 +111,7 @@
 		41D10225241A765C0060E546 /* MainHomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainHomeViewController.swift; sourceTree = "<group>"; };
 		41D10228241A77320060E546 /* CompatibilityViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CompatibilityViewController.swift; sourceTree = "<group>"; };
 		41D1022B241A92290060E546 /* CompatibilityViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CompatibilityViewModel.swift; sourceTree = "<group>"; };
+		41DD0FAA24223CAD008A2565 /* ListBarTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListBarTableViewCell.swift; sourceTree = "<group>"; };
 		41E4D49A24163CF60027E7E9 /* HoroscopeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HoroscopeViewController.swift; sourceTree = "<group>"; };
 		41E4D4A424164CFD0027E7E9 /* Colors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Colors.swift; sourceTree = "<group>"; };
 		41E4D4A624164FDC0027E7E9 /* ZodiacSign.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ZodiacSign.swift; sourceTree = "<group>"; };
@@ -208,9 +216,27 @@
 		4153CACC242160D50007CEB4 /* ProfileVC */ = {
 			isa = PBXGroup;
 			children = (
+				415D35C124238C150082626F /* Navigation */,
 				4153CACD242162080007CEB4 /* ProfileViewController.swift */,
 			);
 			path = ProfileVC;
+			sourceTree = "<group>";
+		};
+		415D35C124238C150082626F /* Navigation */ = {
+			isa = PBXGroup;
+			children = (
+				415D35C224238C3C0082626F /* EditProfileViewController.swift */,
+				415D35C5242397D40082626F /* NotificationViewController.swift */,
+			);
+			path = Navigation;
+			sourceTree = "<group>";
+		};
+		415D35C7242398770082626F /* NotificationListBar */ = {
+			isa = PBXGroup;
+			children = (
+				415D35C8242398A10082626F /* NotificationListBar.swift */,
+			);
+			path = NotificationListBar;
 			sourceTree = "<group>";
 		};
 		416358922417C67300D4B5A3 /* ViewModels */ = {
@@ -365,6 +391,14 @@
 			path = CompatibilityViewModel;
 			sourceTree = "<group>";
 		};
+		41DD0FA724222529008A2565 /* ListBar */ = {
+			isa = PBXGroup;
+			children = (
+				41DD0FAA24223CAD008A2565 /* ListBarTableViewCell.swift */,
+			);
+			path = ListBar;
+			sourceTree = "<group>";
+		};
 		41E4D49924163CCA0027E7E9 /* HoroscopeVC */ = {
 			isa = PBXGroup;
 			children = (
@@ -376,6 +410,8 @@
 		41E4D49F24164C7D0027E7E9 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				415D35C7242398770082626F /* NotificationListBar */,
+				41DD0FA724222529008A2565 /* ListBar */,
 				41384DEB241FC5FE00CB7C30 /* TextInput */,
 				41EA5BFF241CE91200347B0A /* CompatibilityDetailsView */,
 				41BC97F0241BAE3300524D39 /* Buttons */,
@@ -614,6 +650,7 @@
 				41BC97F2241BAE5500524D39 /* WhiteButton.swift in Sources */,
 				416358972417CFB500D4B5A3 /* DataService.swift in Sources */,
 				4153CACB24215F9E0007CEB4 /* UserViewModel.swift in Sources */,
+				415D35C6242397D40082626F /* NotificationViewController.swift in Sources */,
 				4179E3E7241AC96000C6FEA8 /* Compatibility.swift in Sources */,
 				41D10226241A765C0060E546 /* MainHomeViewController.swift in Sources */,
 				4153CAB82420CF450007CEB4 /* SignUpModel.swift in Sources */,
@@ -631,10 +668,13 @@
 				41BC97EE241BA95500524D39 /* PercentLabel.swift in Sources */,
 				41EC45012418CFDE00CFED53 /* SegmentedControl.swift in Sources */,
 				41D1021F241A38210060E546 /* HoroscopeDetails.swift in Sources */,
+				415D35C9242398A10082626F /* NotificationListBar.swift in Sources */,
 				4153CAC82420D9090007CEB4 /* SignUpViewModel.swift in Sources */,
 				4153CABB2420CFC10007CEB4 /* FieldViewModel.swift in Sources */,
+				41DD0FAB24223CAD008A2565 /* ListBarTableViewCell.swift in Sources */,
 				41A7117C241272A5005CE66E /* rx_newsapp.xcdatamodeld in Sources */,
 				41EC45062418F19300CFED53 /* HoroscopeStatsView.swift in Sources */,
+				415D35C324238C3C0082626F /* EditProfileViewController.swift in Sources */,
 				41E4D49B24163CF60027E7E9 /* HoroscopeViewController.swift in Sources */,
 				41EC44FD2418CBE400CFED53 /* Periods.swift in Sources */,
 				41A71174241272A5005CE66E /* SceneDelegate.swift in Sources */,
