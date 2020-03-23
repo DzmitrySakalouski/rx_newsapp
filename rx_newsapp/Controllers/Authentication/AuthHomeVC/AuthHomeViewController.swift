@@ -4,6 +4,7 @@ import UIKit
 
 class AuthHomeViewController: UIViewController {
     let userViewModel = UserViewModel.shared()
+    let signInVC = SignUpViewModel.shared()
     
     var logoImageView: UIImageView = {
         let iv = UIImageView()
@@ -101,11 +102,11 @@ class AuthHomeViewController: UIViewController {
                         
                         self.userViewModel.currentUserRelay.accept(currentUser)
                         
-                        self.userViewModel.nameValue.accept(currentUser.name)
-                        self.userViewModel.birthdayValue.accept(currentUser.birthday)
-                        self.userViewModel.emailValue.accept(currentUser.email)
-                        self.userViewModel.timeOfBirthValue.accept(currentUser.timeOfBirth)
-                        self.userViewModel.placeOfBirthValue.accept(currentUser.placeOfBirth)
+                        self.signInVC.nameFieldViewModel.value.accept(currentUser.name)
+                        self.signInVC.dateFieldViewModel.value.accept(currentUser.birthday)
+                        self.signInVC.timeFieldViewModel.value.accept(currentUser.email)
+                        self.signInVC.placeFieldViewModel.value.accept(currentUser.timeOfBirth)
+                        self.signInVC.emailFieldViewModel.value.accept(currentUser.placeOfBirth)
                         
                         let paymentVC = PaymentViewController()
                         self.navigationController?.pushViewController(paymentVC, animated: true)

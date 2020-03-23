@@ -4,7 +4,7 @@ import RxCocoa
 import Foundation
 
 struct EmailViewModel : FieldViewModel {
-    var value: BehaviorRelay<String> = BehaviorRelay(value: "")
+    var value: BehaviorRelay<String?> = BehaviorRelay(value: "")
     var errorValue: BehaviorRelay<String?> = BehaviorRelay(value: nil)
     
     let title = "Email"

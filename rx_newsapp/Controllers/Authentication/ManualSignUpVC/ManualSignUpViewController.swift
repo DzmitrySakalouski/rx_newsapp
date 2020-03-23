@@ -5,9 +5,9 @@ import RxSwift
 import RxCocoa
 
 class ManualSignUpViewController: UIViewController, UITextFieldDelegate {
-    var viewModel: SignUpViewModel!
+    var viewModel = SignUpViewModel.shared()
     var disposeBag = DisposeBag()
-    
+        
     var titleLabel: UILabel = {
         let label = UILabel()
         label.text = "Get Everyday Actual Horoscope About Your Zodiac Sign"
@@ -87,7 +87,6 @@ class ManualSignUpViewController: UIViewController, UITextFieldDelegate {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        viewModel = SignUpViewModel()
         nameInput.delegate = self
         dateField.delegate = self
         timeField.delegate = self
@@ -142,6 +141,9 @@ class ManualSignUpViewController: UIViewController, UITextFieldDelegate {
     }
     
     func configureBinding() {
+        let alert = UIAlertController(title: "Error", message: nil, preferredStyle: .alert)
+        alert.addAction(UIAlertAction(title: "Cancel", style: .cancel, handler: nil))
+        
         nameInput.rx.text.orEmpty.bind(to: viewModel.nameFieldViewModel.value).disposed(by: disposeBag)
         dateField.rx.text.orEmpty.bind(to: viewModel.dateFieldViewModel.value).disposed(by: disposeBag)
         timeField.rx.text.orEmpty.bind(to: viewModel.timeFieldViewModel.value).disposed(by: disposeBag)
@@ -153,7 +155,16 @@ class ManualSignUpViewController: UIViewController, UITextFieldDelegate {
                 if self.viewModel.validateForm() {
                     self.viewModel.signUp()
                 } else {
-                    print("INVALID")
+                    if !self.viewModel.emailFieldViewModel.validate() {
+                        alert.message = "Wrong Email"
+                    }
+                    else if !self.viewModel.nameFieldViewModel.validate() {
+                        alert.message = "Please fill your Name"
+                    }
+                    else if !self.viewModel.dateFieldViewModel.validate() {
+                        alert.message = "Wrong Birthday date"
+                    }
+                    self.present(alert, animated: true)
                 }
             }).disposed(by: disposeBag)
         

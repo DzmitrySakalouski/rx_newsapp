@@ -15,7 +15,7 @@ class UserViewModel {
     
     let notificationTime = BehaviorRelay<String?>(value: nil)
     
-    let notificationEnabled = BehaviorSubject<Bool>(value: false)
+    let notificationEnabled = BehaviorRelay<Bool>(value: false)
 
     static func shared() -> UserViewModel {
         if instance == nil {

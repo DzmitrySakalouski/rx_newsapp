@@ -7,7 +7,7 @@ struct PlaceFieldViewModel: FieldViewModel {
     
     var errorMessage: String = ""
     
-    var value: BehaviorRelay<String> = BehaviorRelay<String>(value: "")
+    var value: BehaviorRelay<String?> = BehaviorRelay<String?>(value: "")
     
     var errorValue: BehaviorRelay<String?> = BehaviorRelay<String?>(value: nil)
     

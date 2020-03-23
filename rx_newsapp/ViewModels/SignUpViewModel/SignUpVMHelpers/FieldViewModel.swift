@@ -6,7 +6,7 @@ protocol FieldViewModel {
     var title: String { get }
     var errorMessage: String { get }
     
-    var value: BehaviorRelay<String> { get set }
+    var value: BehaviorRelay<String?> { get set }
     var errorValue: BehaviorRelay<String?> { get set }
     
     func validate() -> Bool

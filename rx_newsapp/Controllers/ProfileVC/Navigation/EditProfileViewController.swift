@@ -5,6 +5,7 @@ import UIKit
 
 class EditProfileViewController: UIViewController {
     let userVM = UserViewModel.shared()
+    let updateVM = SignUpViewModel.shared()
     
     let disposeBag = DisposeBag()
     
@@ -167,19 +168,52 @@ class EditProfileViewController: UIViewController {
     }
     
     func configureSubscribtions() {
+        let alert = UIAlertController(title: "Error", message: nil, preferredStyle: .alert)
+        alert.addAction(UIAlertAction(title: "Cancel", style: .cancel, handler: nil))
+        
         userVM.currentUserRelay.subscribe(onNext: { [weak self] user in
             guard let user = user else { return }
-            self?.nameLabel.text = user.name
-            self?.nameInput.text = user.name
-            self?.dateField.text = user.birthday
-            self?.timeField.text = user.timeOfBirth
-            self?.placeField.text = user.placeOfBirth
-            self?.emailField.text = user.email
             
+            self?.nameLabel.text = user.name
+
             let userZodiacSign = SignHelper.getSignFromDateRange(dateString: user.birthday)
             if userZodiacSign != nil {
                 self?.signLabel.text = userZodiacSign?.displayName
             }
         }).disposed(by: disposeBag)
+        
+
+        (nameInput.rx.text <-> updateVM.nameFieldViewModel.value).disposed(by: disposeBag)
+        (dateField.rx.text <-> updateVM.dateFieldViewModel.value).disposed(by: disposeBag)
+        (timeField.rx.text <-> updateVM.timeFieldViewModel.value).disposed(by: disposeBag)
+        (placeField.rx.text <-> updateVM.placeFieldViewModel.value).disposed(by: disposeBag)
+        (emailField.rx.text <-> updateVM.emailFieldViewModel.value).disposed(by: disposeBag)
+
+        timeField.rx.text.orEmpty.bind(to: updateVM.timeFieldViewModel.value).disposed(by: disposeBag)
+        placeField.rx.text.orEmpty.bind(to: updateVM.placeFieldViewModel.value).disposed(by: disposeBag)
+        emailField.rx.text.orEmpty.bind(to: updateVM.emailFieldViewModel.value).disposed(by: disposeBag)
+        
+        submitButton.rx.tap
+        .subscribe(onNext: { [unowned self] in
+            if self.updateVM.validateForm() {
+                self.updateVM.signUp()
+                self.goBack()
+            } else {
+                if !self.updateVM.emailFieldViewModel.validate() {
+                    alert.message = "Wrong Email"
+                }
+                else if !self.updateVM.nameFieldViewModel.validate() {
+                    alert.message = "Please fill your Name"
+                }
+                else if !self.updateVM.dateFieldViewModel.validate() {
+                    alert.message = "Wrong Birthday date"
+                }
+                self.present(alert, animated: true)
+            }
+        }).disposed(by: disposeBag)
+    }
+    
+    private func goBack() {
+        navigationController?.popViewController(animated: true)
     }
 }
