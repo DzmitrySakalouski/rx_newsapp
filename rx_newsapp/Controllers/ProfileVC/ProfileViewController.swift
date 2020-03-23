@@ -1,7 +1,12 @@
 import UIKit
+import RxSwift
+import RxCocoa
 
 class ProfileViewController: UIViewController {
     let menuItems = ["Notification", "Terms of Use", "Privacy Policy", "Contact Us"]
+    
+    let userVM = UserViewModel.shared()
+    let disposeBag = DisposeBag()
     
     let reuseId = "MenuItem"
     
@@ -64,6 +69,8 @@ class ProfileViewController: UIViewController {
         configureView()
         menuTableView.delegate = self
         menuTableView.dataSource = self
+        
+        configureSubscribtions()
     }
 
     private func configureView() {
@@ -91,7 +98,18 @@ class ProfileViewController: UIViewController {
     @objc func handleNavigateToEditProfile() {
         let editVC = EditProfileViewController()
         tabBarController?.navigationController?.pushViewController(editVC, animated: true)
-//        navigationController?.
+    }
+    
+    func configureSubscribtions() {
+        userVM.currentUserRelay.subscribe(onNext: { [weak self] user in
+            guard let user = user else { return }
+            self?.nameLabel.text = user.name
+            let userZodiacSign = SignHelper.getSignFromDateRange(dateString: user.birthday)
+            
+            if userZodiacSign != nil {
+                self?.signLabel.text = userZodiacSign?.displayName
+            }
+        }).disposed(by: disposeBag)
     }
 }
 

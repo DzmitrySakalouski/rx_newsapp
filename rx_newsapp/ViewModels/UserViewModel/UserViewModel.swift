@@ -24,8 +24,4 @@ class UserViewModel {
         
         return instance!
     }
-    
-    func populateUserValueFromPersistedData() {
-       
-    }
 }

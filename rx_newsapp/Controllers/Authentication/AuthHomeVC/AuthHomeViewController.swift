@@ -101,6 +101,12 @@ class AuthHomeViewController: UIViewController {
                         
                         self.userViewModel.currentUserRelay.accept(currentUser)
                         
+                        self.userViewModel.nameValue.accept(currentUser.name)
+                        self.userViewModel.birthdayValue.accept(currentUser.birthday)
+                        self.userViewModel.emailValue.accept(currentUser.email)
+                        self.userViewModel.timeOfBirthValue.accept(currentUser.timeOfBirth)
+                        self.userViewModel.placeOfBirthValue.accept(currentUser.placeOfBirth)
+                        
                         let paymentVC = PaymentViewController()
                         self.navigationController?.pushViewController(paymentVC, animated: true)
                     }

@@ -27,7 +27,7 @@ class NotificationViewController: UIViewController {
     
     lazy var timeField: TextInputView = {
         let timeField = TextInputView()
-        timeField.placeholder = "Time of your Birth"
+        timeField.placeholder = "Schedule Notification"
         timeField.inputView = timePicker
         
         return timeField

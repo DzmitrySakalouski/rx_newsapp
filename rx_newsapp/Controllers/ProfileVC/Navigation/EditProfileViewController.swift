@@ -1,8 +1,13 @@
 import IQKeyboardManagerSwift
-
+import RxSwift
+import RxCocoa
 import UIKit
 
 class EditProfileViewController: UIViewController {
+    let userVM = UserViewModel.shared()
+    
+    let disposeBag = DisposeBag()
+    
     var nameInput: TextInputView = {
         let nameInput = TextInputView()
         nameInput.placeholder = "Full Name"
@@ -128,6 +133,8 @@ class EditProfileViewController: UIViewController {
         
         view.addSubview(submitButton)
         submitButton.anchor(left: view.leftAnchor, bottom: view.bottomAnchor, right: view.rightAnchor, paddingLeft: 15, paddingBottom: 15, paddingRight: 15, height: 44)
+        
+        configureSubscribtions()
     }
     
     func configureNavBar() {
@@ -157,5 +164,22 @@ class EditProfileViewController: UIViewController {
         textField.resignFirstResponder()
         view.endEditing(true)
         return true
+    }
+    
+    func configureSubscribtions() {
+        userVM.currentUserRelay.subscribe(onNext: { [weak self] user in
+            guard let user = user else { return }
+            self?.nameLabel.text = user.name
+            self?.nameInput.text = user.name
+            self?.dateField.text = user.birthday
+            self?.timeField.text = user.timeOfBirth
+            self?.placeField.text = user.placeOfBirth
+            self?.emailField.text = user.email
+            
+            let userZodiacSign = SignHelper.getSignFromDateRange(dateString: user.birthday)
+            if userZodiacSign != nil {
+                self?.signLabel.text = userZodiacSign?.displayName
+            }
+        }).disposed(by: disposeBag)
     }
 }
