@@ -189,10 +189,6 @@ class EditProfileViewController: UIViewController {
         (placeField.rx.text <-> updateVM.placeFieldViewModel.value).disposed(by: disposeBag)
         (emailField.rx.text <-> updateVM.emailFieldViewModel.value).disposed(by: disposeBag)
 
-        timeField.rx.text.orEmpty.bind(to: updateVM.timeFieldViewModel.value).disposed(by: disposeBag)
-        placeField.rx.text.orEmpty.bind(to: updateVM.placeFieldViewModel.value).disposed(by: disposeBag)
-        emailField.rx.text.orEmpty.bind(to: updateVM.emailFieldViewModel.value).disposed(by: disposeBag)
-        
         submitButton.rx.tap
         .subscribe(onNext: { [unowned self] in
             if self.updateVM.validateForm() {

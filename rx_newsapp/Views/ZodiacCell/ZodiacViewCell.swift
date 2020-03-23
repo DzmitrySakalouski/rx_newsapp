@@ -23,18 +23,7 @@ class ZodiacViewCell: UICollectionViewCell {
         let signImage = UIImageView()
         return signImage
     }()
-    
-    private lazy var imageContainer: UIView = {
-        let ic = UIView()
-        ic.backgroundColor = Colors.COLOR_BACKGROUND_LIGHT_BLUE
-        ic.layer.cornerRadius = 25
-        ic.addSubview(self.signImage)
-        ic.anchor(width: 50, height: 50)
-        self.signImage.anchor(width: 30, height: 30)
-        signImage.centerXAnchor.constraint(equalToSystemSpacingAfter: ic.centerXAnchor, multiplier: 0).isActive = true
-        signImage.centerYAnchor.constraint(equalToSystemSpacingBelow: ic.centerYAnchor, multiplier: 0).isActive = true
-        return ic
-    }()
+
     
     private var signSelectStack: UIStackView = {
         let stack = UIStackView()
@@ -49,7 +38,8 @@ class ZodiacViewCell: UICollectionViewCell {
         super.init(frame: frame)
         backgroundColor = Colors.COLOR_DARK_BLUE
         
-        signSelectStack.addArrangedSubview(imageContainer)
+        signSelectStack.addArrangedSubview(signImage)
+        signImage.anchor(width: 50, height: 50)
         signSelectStack.addArrangedSubview(nameLabel)
         signSelectStack.addArrangedSubview(periodLabel)
         addSubview(signSelectStack)

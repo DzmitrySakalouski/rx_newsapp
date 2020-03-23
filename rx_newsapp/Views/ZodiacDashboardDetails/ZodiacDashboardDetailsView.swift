@@ -29,13 +29,6 @@ class ZodiacDashboardDetailsView: UIView {
         return label
     }()
     
-    lazy var imageContainer: UIView = {
-        let v = UIView()
-        v.layer.cornerRadius = 124 / 2
-        v.backgroundColor = Colors.COLOR_BACKGROUND_LIGHT_BLUE
-        return v
-    }()
-    
     var dateRangeLabel: UILabel = {
         let label = UILabel()
         label.font = UIFont.systemFont(ofSize: 14.0)
@@ -50,30 +43,22 @@ class ZodiacDashboardDetailsView: UIView {
         
         horoscopeViewModel = HoroscopeViewModel.shared()
         
-        addSubview(imageContainer)
-        imageContainer.anchor(top: topAnchor, left: leftAnchor, width: 124, height: 124)
-        imageContainer.centerYAnchor.constraint(equalToSystemSpacingBelow: centerYAnchor, multiplier: 0).isActive = true
-        imageContainer.addSubview(imageView)
-        imageView.anchor(width: 80, height: 80)
-        imageView.centerYAnchor.constraint(equalToSystemSpacingBelow: imageContainer.centerYAnchor, multiplier: 0).isActive = true
-        imageView.centerXAnchor.constraint(equalToSystemSpacingAfter: imageContainer.centerXAnchor, multiplier: 0).isActive = true
+        addSubview(imageView)
+        imageView.anchor(top: topAnchor, left: leftAnchor, width: 124, height: 124)
+        imageView.centerYAnchor.constraint(equalToSystemSpacingBelow: centerYAnchor, multiplier: 0).isActive = true
         
         let stackView = UIStackView(arrangedSubviews: [nameLabel, dateRangeLabel])
         stackView.axis = .vertical
         stackView.spacing = 5
         
         addSubview(stackView)
-        stackView.anchor(left: imageContainer.rightAnchor, paddingLeft: 20)
+        stackView.anchor(left: imageView.rightAnchor, paddingLeft: 20)
         stackView.centerYAnchor.constraint(equalToSystemSpacingBelow: centerYAnchor, multiplier: 0).isActive = true
         
         let selectedSign = self.horoscopeViewModel.selectedSignSubject.asDriver(onErrorJustReturn: zodiacSignsArray[0])
         selectedSign.map{ "\($0.displayName)"}.drive(self.nameLabel.rx.text).disposed(by: disposedBag)
         selectedSign.map{ "\($0.dateRange)"}.drive(self.dateRangeLabel.rx.text).disposed(by: disposedBag)
         selectedSign.map{ UIImage(named: $0.image) }.drive(self.imageView.rx.image).disposed(by: disposedBag)
-    }
-    
-    private func configureView() {
-        addSubview(imageContainer)
     }
     
     required init?(coder: NSCoder) {
