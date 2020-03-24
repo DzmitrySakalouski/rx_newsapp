@@ -13,6 +13,7 @@ class SignUpViewModel {
     let timeFieldViewModel = TimeFieldViewModel()
     let placeFieldViewModel = PlaceFieldViewModel()
     let emailFieldViewModel = EmailViewModel()
+    let genderViewModel = GenderFieldViewModel()
     
     private let disposeBag = DisposeBag()
     
@@ -32,14 +33,24 @@ class SignUpViewModel {
         return instance!
     }
     
+    private func getGender(id: Int) -> String {
+        switch id {
+            case 0: return "female"
+            case 1: return "male"
+            default: return "female"
+        }
+    }
+    
     func signUp() {
+        let genderId = genderViewModel.value.value
         
-        let userPayload = UserData(
+        let userPayload = UserData( 
             name: nameFieldViewModel.value.value ?? "",
             birthday: dateFieldViewModel.value.value ?? "",
             email: emailFieldViewModel.value.value ?? "",
             timeOfBirth: timeFieldViewModel.value.value ?? "",
-            placeOfBirth: placeFieldViewModel.value.value ?? ""
+            placeOfBirth: placeFieldViewModel.value.value ?? "",
+            gender: getGender(id: genderId)
         )
         
         let resource = Resource<UserData>(url: URL(string: "https://horoplus.pro/api/user/")!, method: "POST", data: userPayload)

@@ -48,6 +48,7 @@
 		41D10226241A765C0060E546 /* MainHomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41D10225241A765C0060E546 /* MainHomeViewController.swift */; };
 		41D10229241A77320060E546 /* CompatibilityViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41D10228241A77320060E546 /* CompatibilityViewController.swift */; };
 		41D1022C241A92290060E546 /* CompatibilityViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41D1022B241A92290060E546 /* CompatibilityViewModel.swift */; };
+		41D4D6F2242A6DAA0024D4E8 /* GenderViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41D4D6F1242A6DAA0024D4E8 /* GenderViewModel.swift */; };
 		41DD0FAB24223CAD008A2565 /* ListBarTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41DD0FAA24223CAD008A2565 /* ListBarTableViewCell.swift */; };
 		41E4D49B24163CF60027E7E9 /* HoroscopeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41E4D49A24163CF60027E7E9 /* HoroscopeViewController.swift */; };
 		41E4D4A524164CFD0027E7E9 /* Colors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41E4D4A424164CFD0027E7E9 /* Colors.swift */; };
@@ -113,6 +114,7 @@
 		41D10225241A765C0060E546 /* MainHomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainHomeViewController.swift; sourceTree = "<group>"; };
 		41D10228241A77320060E546 /* CompatibilityViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CompatibilityViewController.swift; sourceTree = "<group>"; };
 		41D1022B241A92290060E546 /* CompatibilityViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CompatibilityViewModel.swift; sourceTree = "<group>"; };
+		41D4D6F1242A6DAA0024D4E8 /* GenderViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GenderViewModel.swift; sourceTree = "<group>"; };
 		41DD0FAA24223CAD008A2565 /* ListBarTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListBarTableViewCell.swift; sourceTree = "<group>"; };
 		41E4D49A24163CF60027E7E9 /* HoroscopeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HoroscopeViewController.swift; sourceTree = "<group>"; };
 		41E4D4A424164CFD0027E7E9 /* Colors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Colors.swift; sourceTree = "<group>"; };
@@ -203,6 +205,7 @@
 				4153CAC02420D7320007CEB4 /* NameFiewldViewModel.swift */,
 				4153CAC22420D83A0007CEB4 /* TimeFieldViewModel.swift */,
 				4153CAC42420D8A90007CEB4 /* PlaceFieldViewModel.swift */,
+				41D4D6F1242A6DAA0024D4E8 /* GenderViewModel.swift */,
 			);
 			path = SignUpVMHelpers;
 			sourceTree = "<group>";
@@ -639,6 +642,7 @@
 				41E4D4BF24168E5B0027E7E9 /* ZodiacDashboardDetailsView.swift in Sources */,
 				41D10229241A77320060E546 /* CompatibilityViewController.swift in Sources */,
 				4153CACE242162080007CEB4 /* ProfileViewController.swift in Sources */,
+				41D4D6F2242A6DAA0024D4E8 /* GenderViewModel.swift in Sources */,
 				41E4D4B62416805B0027E7E9 /* Common.swift in Sources */,
 				4153CABF2420D1520007CEB4 /* DateFieldViewModel.swift in Sources */,
 				41384DE5241F920000CB7C30 /* PaymentViewController.swift in Sources */,

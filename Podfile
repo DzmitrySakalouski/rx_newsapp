@@ -8,6 +8,7 @@ target 'rx_newsapp' do
   pod 'RxCocoa', '~> 5'
   pod 'Material', '~> 3.1.0'
   pod 'Charts'
+  pod 'RadioGroup'
   
   use_modular_headers!
   pod 'IQKeyboardManagerSwift'

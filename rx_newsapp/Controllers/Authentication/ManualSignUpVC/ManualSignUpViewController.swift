@@ -3,6 +3,7 @@ import UIKit
 import IQKeyboardManagerSwift
 import RxSwift
 import RxCocoa
+import RadioGroup
 
 class ManualSignUpViewController: UIViewController, UITextFieldDelegate {
     var viewModel = SignUpViewModel.shared()
@@ -29,6 +30,28 @@ class ManualSignUpViewController: UIViewController, UITextFieldDelegate {
         datePicker.datePickerMode = .date
         datePicker.addTarget(self, action: #selector(dateChange), for: .valueChanged)
         return datePicker
+    }()
+    
+    lazy var genderSelectGroup: RadioGroup = {
+        let radioGroup = RadioGroup(titles: ["Female", "Male"])
+        radioGroup.selectedIndex = 0
+        radioGroup.titleColor = Colors.COLOR_WHITE
+        radioGroup.isVertical = true
+        radioGroup.itemSpacing = 10
+        radioGroup.tintColor = Colors.COLOR_WHITE
+        radioGroup.selectedColor = Colors.COLOR_WHITE
+        radioGroup.titleAlignment = .left
+        radioGroup.isButtonAfterTitle = true
+        radioGroup.addTarget(self, action: #selector(handleSelectGender), for: .valueChanged)
+        return radioGroup
+    }()
+    
+    lazy var genderContainer: UIView = {
+        let v = UIView()
+        v.addSubview(genderSelectGroup)
+        genderSelectGroup.anchor(top: v.topAnchor, left: v.leftAnchor)
+        v.anchor(width: 140, height: 50)
+        return v
     }()
     
     lazy var timePicker: UIDatePicker = {
@@ -73,7 +96,7 @@ class ManualSignUpViewController: UIViewController, UITextFieldDelegate {
     }()
     
     lazy var inputStack: UIStackView = {
-        let inputStack = UIStackView(arrangedSubviews: [nameInput, dateField, timeField, placeField, emailField])
+        let inputStack = UIStackView(arrangedSubviews: [nameInput, genderContainer, dateField, timeField, placeField, emailField])
         inputStack.axis = .vertical
         inputStack.spacing = 25
         return inputStack
@@ -174,5 +197,10 @@ class ManualSignUpViewController: UIViewController, UITextFieldDelegate {
                 self.navigationController?.pushViewController(paymentVC, animated: true)
             }
         }).disposed(by: disposeBag)
+    }
+    
+    @objc func handleSelectGender(sender: RadioGroup) {
+        self.viewModel.genderViewModel.value.accept(sender.selectedIndex)
+        print(sender.selectedIndex)
     }
 }

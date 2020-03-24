@@ -34,12 +34,15 @@ PODS:
   - Motion (3.1.3):
     - Motion/Core (= 3.1.3)
   - Motion/Core (3.1.3)
+  - RadioGroup (1.4.0):
+    - SweeterSwift
   - RxCocoa (5.1.0):
     - RxRelay (~> 5)
     - RxSwift (~> 5)
   - RxRelay (5.1.0):
     - RxSwift (~> 5)
   - RxSwift (5.1.0)
+  - SweeterSwift (1.1.3)
 
 DEPENDENCIES:
   - Charts
@@ -49,6 +52,7 @@ DEPENDENCIES:
   - FBSDKCoreKit
   - IQKeyboardManagerSwift
   - Material (~> 3.1.0)
+  - RadioGroup
   - RxCocoa (~> 5)
   - RxSwift (~> 5)
 
@@ -64,9 +68,11 @@ SPEC REPOS:
     - IQKeyboardManagerSwift
     - Material
     - Motion
+    - RadioGroup
     - RxCocoa
     - RxRelay
     - RxSwift
+    - SweeterSwift
 
 SPEC CHECKSUMS:
   Charts: 74c9f256eaf0460c0c416522d1cf8c634ea6b286
@@ -79,10 +85,12 @@ SPEC CHECKSUMS:
   IQKeyboardManagerSwift: 0fb93310284665245591f50f7a5e38de615960b7
   Material: a2a3f400a3b549d53ef89e56c58c4535b29db387
   Motion: cf1e060e489f6661126374d5c60dbd2ed991605c
+  RadioGroup: 27ceb18c20f995ed588f9ec0375099a8dd550f3e
   RxCocoa: 13d2a4d7546a34b8ececae8c281e4ea1dbb94f2b
   RxRelay: a168bd6caf712d00c676ac344e9295afc93b418e
   RxSwift: ad5874f24bb0dbffd1e9bb8443604e3578796c7a
+  SweeterSwift: d909211f6833405628c8c7c6bf9f8f2e8a0e9df9
 
-PODFILE CHECKSUM: d32f3168990d9a79df460b8b08c018290e4e7fad
+PODFILE CHECKSUM: 0d2fa82a3e51efe59dd17a3b93dc409dc7734766
 
 COCOAPODS: 1.8.4

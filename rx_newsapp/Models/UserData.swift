@@ -10,13 +10,14 @@ class UserData: Decodable, Encodable {
     var timeOfBirth: String = ""
     var placeOfBirth: String = ""
     
-    init(name: String, birthday: String, email: String, timeOfBirth: String, placeOfBirth: String) {
+    init(name: String, birthday: String, email: String, timeOfBirth: String, placeOfBirth: String, gender: String) {
         self.name = name
         self.birthday = birthday
         self.email = email
         self.timeOfBirth = timeOfBirth
         self.placeOfBirth = placeOfBirth
         self.id = "iOS-\(UIDevice.current.identifierForVendor!.uuidString)"
+        self.gender = gender
     }
     
     private enum CodingKeys: String, CodingKey {

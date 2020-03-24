@@ -97,7 +97,8 @@ class AuthHomeViewController: UIViewController {
                             birthday: birthday ?? "",
                             email: "",
                             timeOfBirth: "",
-                            placeOfBirth: ""
+                            placeOfBirth: "",
+                            gender: ""
                         )
                         
                         self.userViewModel.currentUserRelay.accept(currentUser)
