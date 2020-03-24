@@ -821,6 +821,7 @@
 			baseConfigurationReference = 0A0AEFB039E891318B60B6B0 /* Pods-rx_newsapp.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = MVU938R64K;
 				INFOPLIST_FILE = rx_newsapp/Info.plist;
@@ -840,6 +841,7 @@
 			baseConfigurationReference = BAD70BB0E61186A09B65F4FB /* Pods-rx_newsapp.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = MVU938R64K;
 				INFOPLIST_FILE = rx_newsapp/Info.plist;

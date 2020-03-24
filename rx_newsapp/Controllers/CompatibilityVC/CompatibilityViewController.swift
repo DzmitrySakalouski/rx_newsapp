@@ -73,10 +73,14 @@ class CompatibilityViewController: UIViewController {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         tabBarController?.navigationItem.titleView = nil
-        compatibilityVM.selectedSignsForComatibility.accept([ZodiacSign]())
         selectSignView.removeFromSuperview()
         stackView.removeFromSuperview()
         configureView()
+    }
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        self.handleClearData()
     }
 
     override func viewDidLoad() {
