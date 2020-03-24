@@ -62,6 +62,7 @@ class ProfileViewController: UIViewController {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         tabBarController?.navigationItem.titleView = nil
+        tabBarController?.navigationItem.rightBarButtonItem = nil
     }
 
     override func viewDidLoad() {

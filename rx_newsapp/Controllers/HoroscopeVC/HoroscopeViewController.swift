@@ -102,6 +102,7 @@ class HoroscopeViewController: UIViewController {
         super.viewWillAppear(animated)
         tabBarController?.navigationController?.navigationBar.isHidden = false
         tabBarController?.navigationItem.titleView = dropdownLabel
+        tabBarController?.navigationItem.rightBarButtonItem = nil
     }
 
     override func viewDidLoad() {

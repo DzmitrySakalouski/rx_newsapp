@@ -74,6 +74,9 @@ class CompatibilityViewController: UIViewController {
         super.viewWillAppear(animated)
         tabBarController?.navigationItem.titleView = nil
         compatibilityVM.selectedSignsForComatibility.accept([ZodiacSign]())
+        selectSignView.removeFromSuperview()
+        stackView.removeFromSuperview()
+        configureView()
     }
 
     override func viewDidLoad() {
@@ -87,6 +90,12 @@ class CompatibilityViewController: UIViewController {
     
     // MARK: - handlers
     private func configureView() {
+        configureBasicView()
+        renderSignSelectView()
+        configureSubscribtions()
+    }
+    
+    private func configureBasicView() {
         view.addSubview(compatibilityScrollView)
         compatibilityScrollView.translatesAutoresizingMaskIntoConstraints = false
         
@@ -108,10 +117,6 @@ class CompatibilityViewController: UIViewController {
         compatibilityScrollView.addSubview(checkCompatibilityButton)
         checkCompatibilityButton.isEnabled = false
         checkCompatibilityButton.anchor(top: selectSignView.bottomAnchor, left: compatibilityScrollView.leftAnchor, right: compatibilityScrollView.rightAnchor, paddingTop: 30, height: 44)
-        
-        renderSignSelectView()
-            
-        configureSubscribtions()
     }
     
     private func renderSignSelectView() {
@@ -169,7 +174,6 @@ class CompatibilityViewController: UIViewController {
     }
     
     @objc func handleClearData() {
-        print("CLEAR")
         self.selectSignView.removeFromSuperview()
         self.stackView.removeFromSuperview()
         self.compatibilityScrollView.removeFromSuperview()
