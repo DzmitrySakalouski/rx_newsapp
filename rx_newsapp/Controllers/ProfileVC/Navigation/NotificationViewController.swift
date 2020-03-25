@@ -2,10 +2,12 @@ import IQKeyboardManagerSwift
 import RxSwift
 import RxCocoa
 import UIKit
+import UserNotifications
 
 class NotificationViewController: UIViewController {
     let userVM = UserViewModel.shared()
     let disposeBag = DisposeBag()
+    let center = UNUserNotificationCenter.current()
     
     var backButton: UIBarButtonItem = {
         let backButton = UIBarButtonItem(
@@ -50,8 +52,11 @@ class NotificationViewController: UIViewController {
         
         IQKeyboardManager.shared.enable = true
         configureView()
+        
         configureSubscription()
         configureNavBar()
+        
+        userVM.getPersistedNotificationData()
     }
     
     func configureView() {
@@ -72,24 +77,71 @@ class NotificationViewController: UIViewController {
         (notificationBar.switchView.rx.isOn <-> userVM.notificationEnabled).disposed(by: disposeBag)
         timeField.rx.text.bind(to: userVM.notificationTime).disposed(by: disposeBag)
         
-        userVM.notificationEnabled.subscribe(onNext: { [weak self] isVisible in
-            if isVisible {
+        userVM.notificationEnabled.subscribe(onNext: { [weak self] isEnabled in
+            if isEnabled {
                 UIView.animate(withDuration: 0.5) {
                     self?.timeFieldContainer.alpha = 1
                 }
             } else {
                 UIView.animate(withDuration: 1) {
                     self?.timeFieldContainer.alpha = 0
+                    self?.center.removeAllPendingNotificationRequests()
                 }
             }
+        }).disposed(by: disposeBag)
+        
+        userVM.notificationTime.asObservable().subscribe(onNext: { [weak self] time in
+            print("time from userdefaults => ", time)
+            self?.timeField.text = time!
         }).disposed(by: disposeBag)
     }
     
     @objc func timeChange() {
+        center.removeAllPendingNotificationRequests()
         let dateFormatter = DateFormatter()
         dateFormatter.dateFormat = "HH:mm"
-        timeField.text = dateFormatter.string(from: timePicker.date)
+        let timeString = dateFormatter.string(from: timePicker.date)
+        userVM.notificationTime.accept(timeString)
+        
+        timeField.text = timeString
+        
+        let hourFormatter = DateFormatter()
+        hourFormatter.dateFormat = "HH"
+        
+        let minuteFormatter = DateFormatter()
+        minuteFormatter.dateFormat = "mm"
+        
+        let hourString = hourFormatter.string(from: timePicker.date)
+        let minuteString = minuteFormatter.string(from: timePicker.date)
+        
+        let minute = Int(minuteString)!
+        let hour = Int(hourString)!
+        
+        self.scheduleLocalNotifications(hour: hour, minute: minute)
     }
+    
+    func scheduleLocalNotifications(hour: Int, minute: Int) {
+        let content = UNMutableNotificationContent()
+        content.title = "HoroPlus"
+        content.body = "New Horoscope Available"
+        content.sound = .default
+        
+        var dateComponents = DateComponents()
+        dateComponents.calendar = Calendar.current
 
+        dateComponents.hour = hour
+        dateComponents.minute = minute
+           
+        // Create the trigger as a repeating event.
+        let trigger = UNCalendarNotificationTrigger(
+                 dateMatching: dateComponents, repeats: true)
+        
+        let uuidString = UUID().uuidString
+        let request = UNNotificationRequest(identifier: uuidString, content: content, trigger: trigger)
+        
+        center.add(request)
+        
+        userVM.setPersistedNotificationData()
+    }
 }
 

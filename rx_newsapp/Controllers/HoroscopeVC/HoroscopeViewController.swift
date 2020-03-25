@@ -1,4 +1,4 @@
-
+import UserNotifications
 import UIKit
 import RxSwift
 
@@ -107,6 +107,21 @@ class HoroscopeViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        let notificationCenter = UNUserNotificationCenter.current()
+        notificationCenter.requestAuthorization(options: [.alert, .badge, .sound]) { granted, error in
+            if granted {
+                print("Yea")
+                print("Yea")
+                print("Yea")
+                print("Yea")
+                print("Yea")
+                print("Yea")
+                print("Yea")
+            } else {
+                print("No")
+            }
+        }
+
                 
         horoscopeVM = HoroscopeViewModel.shared()
         horoscopeVM.getHoroscopeData()
